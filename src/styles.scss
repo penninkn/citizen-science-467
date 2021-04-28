@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+$blue1: #0198E9;
+$red1: #d40d38;
+
+
+body {
+    background-image: radial-gradient( rgba(255, 233, 91, 0.24), rgba(253, 192, 26, 0.35)), 
+    url('tree-4373601_640.png');
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    min-height:100%;
+    
+}
+
+#site-container {
+    margin:auto;
+    width:70%;
+    min-height:100%;
+
+}
+
+.btn-round-red {
+    background-color: $red1;
+    color:white;
+    border:none;
+    padding: 10px 15px;
+    text-align:center;
+    border-radius:8px;
+    font-size:16px;
+
+}
+
+.btn-round-blue {
+    background-color: $blue1;
+    color:white;
+    border:none;
+    padding: 10px 15px;
+    text-align:center;
+    border-radius:8px;
+    font-size:16px;
+
+}
+
+.btn-blue-outline {
+    color:$blue1;
+    background:transparent;
+    border:2px solid $blue1;
+    padding: 10px 15px;
+    text-align:center;
+    border-radius: 8px;
+    font-size:16px;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    #site-container {
+        width:90%;
+    }
+}

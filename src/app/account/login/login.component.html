@@ -1,0 +1,20 @@
+<div class="login_form">
+<form [formGroup]='loginForm' (ngSubmit)="onSubmit()">
+    <div>
+      <label>
+        Username:<br>
+        <input type="text" formControlName="username">
+      </label>
+    </div>
+    <div>
+      <label>
+        Password:<br>
+        <input type="text" formControlName="password">
+      </label><br>
+    </div>
+    <button type="submit" class='btn-blue-outline'[disabled]="!loginForm.valid">Submit</button>
+  </form><br>
+  
+  
+  {{ loginForm.value | json}}
+</div>

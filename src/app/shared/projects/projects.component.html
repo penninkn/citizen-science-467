@@ -1,0 +1,20 @@
+<table class='proj_table'>
+    <tr><th>
+        TITLE
+    </th>
+<th>
+    PROJECT
+</th>
+<th>
+DESCRIPTION
+</th>
+<th colspan="2"></th>
+</tr>
+<tr *ngFor = "let project of sample_projects">
+<td>{{project.title}}</td>
+<td>{{project.type}}</td>
+<td>{{project.description}}</td>
+<td><button class='btn-blue-outline'>View Observations</button></td>
+<td><button class='btn-blue-outline'>View Project</button></td>
+</tr>
+</table>
