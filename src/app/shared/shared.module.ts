@@ -5,20 +5,9 @@ import { ObservationComponent } from './observation/observation.component';
 import { ProjectDescriptionComponent } from './project-description/project-description.component';
 import { ProjectObservationsComponent } from './project-observations/project-observations.component';
 
-
-
 @NgModule({
-  declarations: [
-    ProjectsComponent,
-    ObservationComponent,
-    ProjectDescriptionComponent,
-    ProjectObservationsComponent
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    ProjectsComponent
-  ]
+  declarations: [ProjectsComponent],
+  imports: [CommonModule],
+  exports: [ProjectsComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

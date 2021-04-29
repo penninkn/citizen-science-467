@@ -1,18 +1,8 @@
-<!--p *ngFor="let project of projects">
-  {{project.title}}
-</p-->
-
 <div class='content'>
   <div class='header'>
     <h1>Citizen Science App</h1>
   </div>
-  <br>
-  <div class ='app_content'>
-<app-login></app-login><br>
-<button class='btn-blue-outline'>Create account</button></div>
-<app-admin-dashboard></app-admin-dashboard>
-<app-user-observations></app-user-observations>
-<router-outlet></router-outlet>
-
-
+  <div class='app_content'>
+    <router-outlet></router-outlet>
+  </div>
 </div>

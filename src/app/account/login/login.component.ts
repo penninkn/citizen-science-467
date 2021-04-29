@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,11 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   loginForm = this.fb.group({
     username: [''],
@@ -23,14 +28,14 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.get('password').value,
     };
 
-    console.log(formData);
-    const res = await this.http
-      .post('http://localhost:3000/auth/login', formData)
-      .toPromise();
+    try {
+      const res = await this.http
+        .post('http://localhost:3000/auth/login', formData)
+        .toPromise();
 
-    console.log(res);
-
-    //TODO: store res.token in sessionStorage! This is our sessiontoken and will allow the user to access protected resources
-    //TODO: add error handling for failed login
+      this.router.navigateByUrl('dashboard');
+    } catch (err) {
+      window.alert(err.message);
+    }
   }
 }

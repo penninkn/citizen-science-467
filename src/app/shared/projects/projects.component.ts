@@ -1,32 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
+  sampleProjects: any;
 
-  constructor() { }
-    sample_projects:object[];
-  ngOnInit(): void {
-    this.sample_projects = [
-      {'id': 1,
-      'title': 'TidePools',
-      'type': 'oceans/streams',
-      'description': 'sample sample sample sample sample'},
-      {'id': 2,
-      'title': 'Local Animals',
-      'type': 'animals',
-      'description': 'sample sample sample sample sample'},
-      {'id': 3,
-      'title': 'Stargazing',
-      'type': 'weather',
-      'description': 'sample sample sample sample sample'},
-
-
-    ]
-  
+  constructor(private http: HttpClient) {}
+  async ngOnInit() {
+    this.sampleProjects = await this.http
+      .get(environment.backendLocalUrl + 'project/projects')
+      .toPromise();
   }
-
 }
