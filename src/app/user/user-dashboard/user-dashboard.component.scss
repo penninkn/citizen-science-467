@@ -1,0 +1,74 @@
+$blue1: #0198E9;
+$red1: #d40d38;
+$green1:#45c474;
+$orange1:#fa8225;
+
+
+h1 {
+    color:$red1;
+    text-align:center;
+}
+
+h2 {
+    color:$blue1;
+    text-align:center;
+}
+
+button {
+    margin:0 auto;
+    display:block;
+}
+
+a {
+    text-decoration:none;
+    cursor: pointer;
+}
+
+img {
+    width:80%;
+    margin:auto;
+}
+
+.proj_type {
+    color:white;
+    border:none;
+    padding: 15px 15px;
+    height:160px;
+    width:160px;
+    text-align:center;
+    border-radius:8px;
+    font-size:20px;
+}
+
+#plants {
+	background-color:$green1;
+}
+
+#animals {
+	background-color:$red1;
+}
+
+#weather {
+	background-color:$orange1;
+}
+
+#water {
+	background-color:$blue1;
+}
+
+table {
+    width:60%;
+    margin:auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+td {
+    padding:10px;
+}
+
+@media only screen and (max-width: 600px) {
+    table {
+        width:90%;
+    }
+}
