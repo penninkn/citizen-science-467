@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-observations',
@@ -7,21 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserObservationsComponent implements OnInit {
 
-  my_observations: object[];
-  constructor() { }
-
-  ngOnInit(): void {
-    this.my_observations = [
-      { 'id': 1,
-        'title': 'Lots of Fish',
-        'project': 'Tidepool Fun',
-        'description': 'fillertext fillertext fillertext fillertext fillertext fillertext fillertext fillertext'},
-        { 'id': 2,
-        'title': 'I Saw A Raccon!',
-        'project': 'Local Dogs',
-        'description': 'fillertext fillertext fillertext fillertext fillertext fillertext fillertext fillertext'},
-        
-    ]
+  sampleObservations: any;  
+ 
+  constructor(private http: HttpClient) {}
+    async ngOnInit() {
+        this.sampleObservations = await this.http
+        .get(environment.backendLocalUrl + 'observation/observations')
+        .toPromise();
   }
-
 }

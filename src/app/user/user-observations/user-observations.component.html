@@ -5,17 +5,19 @@
             TITLE
         </th>
     <th>
-        PROJECT
+        TEXT
     </th>
     <th>
-    DESCRIPTION
+    DATE
     </th>
     <th colspan='2'></th>
     </tr>
-    <tr *ngFor="let obs of my_observations">
+    <!-- <tr *ngFor="let obs of observations"> -->
+
+    <tr *ngFor="let obs of sampleObservations">
     <td>{{obs.title}}</td>
-    <td>{{obs.project}}</td>
-    <td>{{obs.description}}</td>
+    <td>{{obs.text}}</td>
+    <td>{{obs.date}}</td>
     <td><button class='btn-round-blue'>Edit</button></td>
     <td><button class='btn-round-red'>Delete</button></td>
     </tr>
