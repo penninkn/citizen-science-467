@@ -10,6 +10,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { UserObservationsComponent } from './user/user-observations/user-observations.component';
 import { SharedModule } from './shared/shared.module';
 import { AccountModule } from './account/account.module';
+import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AccountModule } from './account/account.module';
     AdminDashboardComponent,
     UserObservationsComponent,
     LoginComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
