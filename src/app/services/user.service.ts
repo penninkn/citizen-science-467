@@ -9,7 +9,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  async getUserInfo(username: string) {
+  async getUserInfo() {
+    const username = localStorage.getItem('username')
     return await this.http.get(environment.backendLocalUrl + 'users/' + username).toPromise();
   }
 

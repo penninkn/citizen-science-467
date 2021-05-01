@@ -12,12 +12,7 @@ export class UserDashboardComponent implements OnInit {
   constructor(private usersService: UserService) { }
 
   async ngOnInit() {
-    const username = this.getUsernameFromLocalStorage();
-    this.user = await this.usersService.getUserInfo(username);
-  }
-
-  private getUsernameFromLocalStorage() {
-    return localStorage.getItem('username');
+    this.user = await this.usersService.getUserInfo();
   }
 
 }
