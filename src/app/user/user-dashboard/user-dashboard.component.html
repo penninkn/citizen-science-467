@@ -1,4 +1,4 @@
-<h1>Welcome Back, username!</h1>
+<h1>Welcome Back, {{user.first_name}}!</h1>
 <h2>Choose a Project</h2>
 <table class="types_table">
     <tr><td><a routerLink="/projects"><button class="proj_type" id="plants">
@@ -15,3 +15,4 @@
     oceans and streams</button></a></td></tr></table>
     
 <a routerLink="/observations"><button class="btn-blue-outline-large">My Logs</button></a>
+<a routerLink="/admin-dashboard"><button *ngIf="user.admin" class="btn-blue-outline-large">Admin Dashboard</button></a>

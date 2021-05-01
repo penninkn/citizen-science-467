@@ -29,10 +29,14 @@ export class LoginComponent implements OnInit {
     };
 
     try {
-      const res = await this.http
+      const res: any = await this.http
         .post('http://localhost:3000/auth/login', formData)
         .toPromise();
 
+      console.log(res);
+
+      localStorage.setItem('username', res.username);
+      sessionStorage.setItem('isLoggedIn', 'true');
       this.router.navigateByUrl('dashboard');
     } catch (err) {
       window.alert(err.message);
