@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,    OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class AdminDashboardComponent implements OnInit {
 
   constructor(private usersService: UserService) { }
   
-  async ngOnInit() {
+  async ngOnInit() { 
     this.user = await this.usersService.getUserInfo();
   }
 

@@ -13,7 +13,7 @@ export class ProjectsComponent implements OnInit {
   constructor(private http: HttpClient) {}
   async ngOnInit() {
     this.sampleProjects = await this.http
-      .get(environment.backendLocalUrl + 'project/projects')
+      .get(environment.backendUrl + 'project/projects')
       .toPromise();
   }
 }
