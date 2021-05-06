@@ -1,8 +1,10 @@
+import { UserService } from './../../services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import {GeolocationService} from '@ng-web-apis/geolocation';
+import { GeolocationService } from '@ng-web-apis/geolocation';
+
 
 
 @Component({
@@ -15,7 +17,10 @@ export class MakeObservationComponent implements OnInit {
     public latitude;
     public longitude;    
 
+    user: any;
+
     constructor(
+        private usersService: UserService,
         private fb: FormBuilder,
         private http: HttpClient,
         private router: Router,
@@ -33,7 +38,10 @@ export class MakeObservationComponent implements OnInit {
         latitude: Number
     });
 
-    ngOnInit(): void {}
+    async ngOnInit() {
+        this.user = await this.usersService.getUserInfo();
+        console.log(this.user);
+    }
 
     getLocation(){
         this.geolocation$.subscribe(position => {
@@ -44,7 +52,7 @@ export class MakeObservationComponent implements OnInit {
 
     async onSubmit() {
         let obsData = {
-          user: localStorage.username,
+          user: this.user.username,
           title: this.obsForm.get('title').value,
           text: this.obsForm.get('observation').value,
           date: this.obsForm.get('date').value,
@@ -57,17 +65,20 @@ export class MakeObservationComponent implements OnInit {
             const res: any = await this.http
               .post('http://localhost:3000/observation/create', obsData)
               .toPromise();
-      
-            console.log(res);
+ 
+            var userObs = { observation: res.observation._id }
+            //console.log(userObs);
 
-            
+            console.log(res);
+            this.obsForm.reset();
 
           } catch (err) {
             window.alert(err.message);
           }
     }
 }
-function username(username: any) {
-    throw new Error('Function not implemented.');
-}
+
+
+
+
 
