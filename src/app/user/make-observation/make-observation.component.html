@@ -1,30 +1,63 @@
-<h1>Add a New Observation</h1><div class="add_form">
-    <form>
-        <div>
-          <label>
-            Username:<br>
-            <input type="text">
-          </label>
-        </div>
-        <div>
-          <label>
-            Date:<br>
-            <input type="datetime">
-          </label><br>
-        </div>
+<h1>Add a New Observation</h1>
+
+
+
+<div class="obs_form">
+    <form [formGroup]="obsForm" (ngSubmit)="onSubmit()">
         <div>
             <label>
-              Location:<br>
-<!--To be added:tag location-->
-            </label><br>
-          </div>
-        <label>
-            Observation:<br>
-            <textarea name="obs"></textarea>
-          </label><br>
+                Title:<br>
+                <input type="text" formControlName="title">
+            </label>
         </div>
-        <button type="submit">Submit</button>
-      </form><br>
-      
+        
+        <div>
+            <label>
+            Observation:<br>
+            <textarea name="obs" formControlName="observation"></textarea>
+            </label><br>
+        </div>
 
-    </div>
+        <div>
+            <label>
+                City:<br>
+                <input type="text" formControlName="city">
+            </label><br>
+        </div>
+
+        <div>
+            <label>
+                State:<br>
+                <input type="text" formControlName="state">
+            </label><br>
+        </div>
+ 
+        <div>
+            <label>
+            Date:<br>
+            <input type="date" formControlName="date">
+            </label><br>
+        </div>
+        
+        <button type="button" class="btn-blue-outline" (click)="getLocation()">Get Location</button>
+        
+        <div>
+            <label>
+                Longitude:<br>
+                <input [(ngModel)]="longitude" value={{longitude}} type="number" formControlName="longitude">
+            </label><br>
+            <label>
+                Latitude:<br>
+                <input [(ngModel)]="latitude"  type="number" formControlName="latitude">
+            </label><br>
+        </div>
+        
+        <button class="btn-blue-outline" type="submit">Submit</button><br>
+        
+    </form><br>
+      
+</div>
+
+ <!-- <button (click)="onTestClick()">Greet</button> -->
+
+ <!-- {{obs}} -->
