@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from 'src/app/services/projects.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,10 +11,8 @@ import { environment } from 'src/environments/environment';
 export class ProjectsComponent implements OnInit {
   sampleProjects: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private projectsService: ProjectsService) {}
   async ngOnInit() {
-    this.sampleProjects = await this.http
-      .get(environment.backendUrl + 'project/projects')
-      .toPromise();
+    this.sampleProjects = await this.projectsService.getAllProjects();
   }
 }

@@ -21,7 +21,12 @@ export class LoginComponent implements OnInit {
     password: [''],
   });
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (isLoggedIn) {
+      this.router.navigateByUrl('dashboard');
+    }
+  }
 
   async onSubmit() {
     let formData = {
@@ -33,9 +38,6 @@ export class LoginComponent implements OnInit {
       const res: any = await this.http
         .post(environment.backendUrl + 'auth/login', formData)
         .toPromise();
-
-      console.log(res);
-
       localStorage.setItem('username', res.username);
       sessionStorage.setItem('isLoggedIn', 'true');
       this.router.navigateByUrl('dashboard');

@@ -10,7 +10,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { UserObservationsComponent } from './user/user-observations/user-observations.component';
 import { SharedModule } from './shared/shared.module';
 import { AccountModule } from './account/account.module';
-import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +19,11 @@ import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.compo
     AdminDashboardComponent,
     UserObservationsComponent,
     LoginComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
