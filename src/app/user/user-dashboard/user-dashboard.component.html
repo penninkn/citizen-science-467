@@ -1,18 +1,23 @@
 <h1>Welcome Back, {{user.first_name}}!</h1>
 <h2>Choose a Project</h2>
 <table class="types_table">
-    <tr><td><a routerLink="/projects"><button class="proj_type" id="plants">
-    <img src="assets/imgs/leaf-solid.svg"><br>
-    plants and nature</button></a></td>
-    <td><a routerLink="/projects"><button class="proj_type" id="animals">
-    <img src="assets/imgs/paw-solid.svg"><br>
-    wildlife</button></a></td></tr>
-    <tr><td><a routerLink="/projects"><button class="proj_type" id="weather">
-    <img src="assets/imgs/cloud-sun-solid.svg"><br>
-    weather</button></a></td>
-    <td><a routerLink="/projects"><button class="proj_type" id="water">
-        <img src="assets/imgs/water-solid.svg"><br>
-    oceans and streams</button></a></td></tr></table>
-    
+    <tr>
+        <td><a [routerLink]="['/projects']" [queryParams]="{type: 'plants'}"><button class="proj_type" id="plants">
+                    <img src="assets/imgs/leaf-solid.svg"><br>
+                    plants and nature</button></a></td>
+        <td><a [routerLink]="['/projects']" [queryParams]="{type: 'wildlife'}"><button class="proj_type" id="animals">
+                    <img src="assets/imgs/paw-solid.svg"><br>
+                    wildlife</button></a></td>
+    </tr>
+    <tr>
+        <td><a [routerLink]="['/projects']" [queryParams]="{type: 'weather'}"><button class="proj_type" id="weather">
+                    <img src="assets/imgs/cloud-sun-solid.svg"><br>
+                    weather</button></a></td>
+        <td><a [routerLink]="['/projects']" [queryParams]="{type: 'water'}"><button class="proj_type" id="water">
+                    <img src="assets/imgs/water-solid.svg"><br>
+                    oceans and streams</button></a></td>
+    </tr>
+</table>
+
 <a routerLink="/observations"><button class="btn-blue-outline-large">My Logs</button></a>
 <a routerLink="/admin-dashboard"><button *ngIf="user.admin" class="btn-blue-outline-large">Admin Dashboard</button></a>
