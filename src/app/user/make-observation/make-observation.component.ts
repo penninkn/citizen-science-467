@@ -10,6 +10,7 @@ import { GeolocationService } from '@ng-web-apis/geolocation';
   templateUrl: './make-observation.component.html',
   styleUrls: ['./make-observation.component.scss'],
 })
+
 export class MakeObservationComponent implements OnInit {
   public latitude;
   public longitude;
