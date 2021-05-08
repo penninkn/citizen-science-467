@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'admin-dashboard', component: AdminDashboardComponent},
   {path: 'add-project', component: AddProjectComponent},
   {path: 'add-observation', component: MakeObservationComponent}
+  
 ];
 
 @NgModule({
