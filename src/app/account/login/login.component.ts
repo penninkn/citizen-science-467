@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,12 @@ export class LoginComponent implements OnInit {
     password: [''],
   });
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (isLoggedIn) {
+      this.router.navigateByUrl('dashboard');
+    }
+  }
 
   async onSubmit() {
     let formData = {
@@ -30,11 +36,8 @@ export class LoginComponent implements OnInit {
 
     try {
       const res: any = await this.http
-        .post('http://localhost:3000/auth/login', formData)
+        .post(environment.backendUrl + 'auth/login', formData)
         .toPromise();
-
-      console.log(res);
-
       localStorage.setItem('username', res.username);
       sessionStorage.setItem('isLoggedIn', 'true');
       this.router.navigateByUrl('dashboard');
