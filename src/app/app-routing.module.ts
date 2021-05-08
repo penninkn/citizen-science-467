@@ -1,3 +1,4 @@
+import { MakeObservationComponent } from './user/make-observation/make-observation.component';
 import { UserObservationsComponent } from './user/user-observations/user-observations.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'observations', component: UserObservationsComponent },
       { path: 'admin-dashboard', component: AdminDashboardComponent },
       { path: 'add-project', component: AddProjectComponent },
+      { path: 'add-observation', component: MakeObservationComponent},
     ],
   },
 ];
