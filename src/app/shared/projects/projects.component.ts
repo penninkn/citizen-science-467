@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-projects',
@@ -10,9 +12,20 @@ import { environment } from 'src/environments/environment';
 })
 export class ProjectsComponent implements OnInit {
   sampleProjects: any;
+  projectType: string;
 
-  constructor(private projectsService: ProjectsService) {}
+  constructor(private route: ActivatedRoute,
+    private projectsService: ProjectsService) { }
   async ngOnInit() {
-    this.sampleProjects = await this.projectsService.getAllProjects();
+    this.route.queryParams.subscribe(params => {
+      this.projectType = params['type'];
+    });
+    if (this.projectType) {
+      this.sampleProjects = await this.projectsService.getProjectsByType(this.projectType);
+    }
+    else {
+      this.sampleProjects = await this.projectsService.getAllProjects();
+
+    }
   }
 }
