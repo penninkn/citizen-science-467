@@ -60,6 +60,7 @@ export class MakeObservationComponent implements OnInit {
     } catch (err) {
       window.alert(err.message);
     }
+    this.obsForm.reset();
   }
 }
 function username(username: any) {
