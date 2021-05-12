@@ -3,17 +3,20 @@
     <div>
       <label>
         Username:<br />
-        <input type="text" formControlName="username" />
+        <input type="text" formControlName="username">
       </label>
     </div>
     <div>
       <label>
         Password:<br />
-        <input type="text" formControlName="password" /> </label><br />
+        <input type="password" formControlName="password"> </label><br />
     </div>
     <button type="submit" class="btn-blue-outline" [disabled]="!loginForm.valid">
       Submit
     </button>
   </form>
-  <br />
+  <div> <br><br><br>
+    <a routerLink="/registration"><button class="btn-round-red">No Account? Sign Up!</button></a>
+  </div>
+  <br>
 </div>

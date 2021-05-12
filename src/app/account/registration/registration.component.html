@@ -1,1 +1,44 @@
-<p>registration works!</p>
+<h1>Sign Up</h1>
+<div id="message">
+    <h3>{{message}}</h3>
+</div>
+<div class="add_form">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>
+                First Name:<br>
+                <input type="text" formControlName="first_name">
+            </label>
+        </div>
+        <div>
+            <label>
+                Last Name:<br>
+                <input type="text" formControlName="last_name">
+            </label>
+        </div>
+        <div>
+            <label>
+                age:<br>
+                <input type="number" formControlName="age">
+            </label>
+        </div>
+        <div>
+            <label>
+                username:<br>
+                <input type="text" formControlName="username">
+            </label>
+        </div>
+        <div>
+            <label>
+                email:<br>
+                <input type="text" formControlName="email">
+            </label>
+        </div>
+        <div>
+            <label>
+                password:<br>
+                <input type="text" formControlName="password">
+            </label>
+        </div>
+        <button class="btn-round-red" type="submit">Submit</button>
+    </form><br>

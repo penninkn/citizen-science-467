@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router
-  ) {}
+  ) { }
 
   loginForm = this.fb.group({
     username: [''],
