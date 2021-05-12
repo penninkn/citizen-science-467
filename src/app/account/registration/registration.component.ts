@@ -49,7 +49,7 @@ export class RegistrationComponent implements OnInit {
         .post('http://localhost:3000/auth/register', formData)
         .toPromise();
 
-      this.router.navigateByUrl('login');
+      this.router.navigateByUrl('login?created=success');
     } catch (err) {
       console.log(err);
       this.message = err.error.error;
