@@ -1,4 +1,3 @@
-import { MakeObservationComponent } from './user/make-observation/make-observation.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,8 +10,12 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { UserObservationsComponent } from './user/user-observations/user-observations.component';
 import { SharedModule } from './shared/shared.module';
 import { AccountModule } from './account/account.module';
+<<<<<<< HEAD
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+=======
 import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
 import {AddProjectComponent} from './admin/add-project/add-project.component'
+>>>>>>> a8611508bcbd7783f65de63e1b71145035a60e30
 
 @NgModule({
   declarations: [
@@ -22,8 +25,10 @@ import {AddProjectComponent} from './admin/add-project/add-project.component'
     UserObservationsComponent,
     LoginComponent,
     UserDashboardComponent,
-    MakeObservationComponent,
+<<<<<<< HEAD
+=======
     AddProjectComponent
+>>>>>>> a8611508bcbd7783f65de63e1b71145035a60e30
   ],
   imports: [
     AppRoutingModule,
