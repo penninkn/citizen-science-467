@@ -1,22 +1,26 @@
+import { ObservationService } from './../../services/observation.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { GeolocationService } from '@ng-web-apis/geolocation';
 
 @Component({
-  selector: 'app-make-observation',
-  templateUrl: './make-observation.component.html',
-  styleUrls: ['./make-observation.component.scss'],
+  selector: 'app-update-observation',
+  templateUrl: './update-observation.component.html',
+  styleUrls: ['./update-observation.component.scss'],
 })
-export class MakeObservationComponent implements OnInit {
+export class UpdateObservationComponent implements OnInit {
   public latitude;
   public longitude;
+  observation: any;
 
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
+    private observationService: ObservationService,
+    private route: ActivatedRoute,
     private readonly geolocation$: GeolocationService
   ) {}
 
@@ -31,7 +35,11 @@ export class MakeObservationComponent implements OnInit {
     latitude: Number,
   });
 
-  ngOnInit(): void {}
+  async ngOnInit(){
+    const observationID = this.route.snapshot.paramMap.get('id');
+    this.observation = await this.observationService.getOneObservation(observationID);
+    console.log(this.observation);
+  }
 
   getLocation() {
     this.geolocation$.subscribe((position) => {
@@ -53,20 +61,13 @@ export class MakeObservationComponent implements OnInit {
     };
     try {
       const res: any = await this.http
-        .post('http://localhost:3000/observation/create', obsData)
+        .put('http://localhost:3000/observation/update', obsData)
         .toPromise();
 
       console.log(res);
     } catch (err) {
       window.alert(err.message);
     }
-    // add put obs id to user
-
-
-
     this.obsForm.reset();
   }
-}
-function username(username: any) {
-  throw new Error('Function not implemented.');
 }

@@ -12,7 +12,8 @@ import { UserObservationsComponent } from './user/user-observations/user-observa
 import { SharedModule } from './shared/shared.module';
 import { AccountModule } from './account/account.module';
 import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
-import {AddProjectComponent} from './admin/add-project/add-project.component'
+import {AddProjectComponent} from './admin/add-project/add-project.component';
+import { UpdateObservationComponent } from './user/update-observation/update-observation.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {AddProjectComponent} from './admin/add-project/add-project.component'
     LoginComponent,
     UserDashboardComponent,
     MakeObservationComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    UpdateObservationComponent
   ],
   imports: [
     AppRoutingModule,
