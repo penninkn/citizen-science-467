@@ -14,6 +14,7 @@ import { AccountModule } from './account/account.module';
 import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
 import {AddProjectComponent} from './admin/add-project/add-project.component';
 import { UpdateObservationComponent } from './user/update-observation/update-observation.component'
+import { DatePipe} from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { UpdateObservationComponent } from './user/update-observation/update-obs
     ReactiveFormsModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

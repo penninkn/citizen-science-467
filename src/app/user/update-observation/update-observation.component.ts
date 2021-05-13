@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GeolocationService } from '@ng-web-apis/geolocation';
+import { DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-update-observation',
@@ -13,10 +14,19 @@ import { GeolocationService } from '@ng-web-apis/geolocation';
 export class UpdateObservationComponent implements OnInit {
   public latitude;
   public longitude;
-  observation: any;
+  public title;
+  public observationText;
+  public city;
+  public state;
+  public date;
+
+  public observation;
+  public observationID;
 
   constructor(
+    private datepipe: DatePipe,
     private fb: FormBuilder,
+    private datePipe: DatePipe,
     private http: HttpClient,
     private router: Router,
     private observationService: ObservationService,
@@ -35,9 +45,18 @@ export class UpdateObservationComponent implements OnInit {
     latitude: Number,
   });
 
-  async ngOnInit(){
-    const observationID = this.route.snapshot.paramMap.get('id');
-    this.observation = await this.observationService.getOneObservation(observationID);
+  async ngOnInit() {
+    this.observationID = this.route.snapshot.paramMap.get('id');
+    this.observation = await this.observationService.getOneObservation(
+      this.observationID
+    );
+    this.title = this.observation.title;
+    this.observationText = this.observation.text;
+    this.city = this.observation.city;
+    this.state = this.observation.state;
+    this.date = this.datepipe.transform(this.observation.date, 'yyyy-MM-dd');
+    this.longitude = this.observation.longitude;
+    this.latitude = this.observation.latitude;
     console.log(this.observation);
   }
 
@@ -61,7 +80,7 @@ export class UpdateObservationComponent implements OnInit {
     };
     try {
       const res: any = await this.http
-        .put('http://localhost:3000/observation/update', obsData)
+        .put('http://localhost:3000/observation/' + this.observationID, obsData)
         .toPromise();
 
       console.log(res);

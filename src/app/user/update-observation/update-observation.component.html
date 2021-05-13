@@ -5,35 +5,55 @@
     <div>
       <label>
         Title:<br />
-        <input type="text" formControlName="title" />
+        <input
+          [(ngModel)]="title"
+          value="{{ title }}"
+          type="text"
+          formControlName="title"
+        />
       </label>
     </div>
 
     <div>
       <label>
         Observation:<br />
-        <textarea name="obs" formControlName="observation"></textarea></label
+        <textarea
+          [(ngModel)]="observationText"
+          value="{{ observationText }}"
+          name="obs"
+          formControlName="observation"
+        ></textarea></label
       ><br />
     </div>
 
     <div>
       <label>
         City:<br />
-        <input type="text" formControlName="city" /> </label
+        <input 
+        [(ngModel)]="city"
+        value="{{ city }}"
+        type="text" 
+        formControlName="city" /> </label
       ><br />
     </div>
 
     <div>
       <label>
         State:<br />
-        <input type="text" formControlName="state" /> </label
+        <input
+        [(ngModel)]="state"
+        value="{{ state }}"
+        type="text" formControlName="state" /> </label
       ><br />
     </div>
 
     <div>
       <label>
         Date:<br />
-        <input type="date" formControlName="date" /> </label
+        <input
+        [(ngModel)]="date"
+        value="{{ date | date:'yyyy-MM-dd' }}"
+         type="date" formControlName="date" /> </label
       ><br />
     </div>
 
@@ -65,4 +85,3 @@
   </form>
   <br />
 </div>
-
