@@ -11,10 +11,12 @@ import { ProjectDescriptionComponent } from './shared/project-description/projec
 import { ObservationComponent } from './shared/observation/observation.component';
 import { ProjectObservationsComponent } from './shared/project-observations/project-observations.component';
 import { AuthGuard } from './guards/auth.guard';
+import { RegistrationComponent } from './account/registration/registration.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'registration', component: RegistrationComponent },
 
   {
     path: '',

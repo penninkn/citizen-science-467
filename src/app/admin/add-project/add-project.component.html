@@ -1,28 +1,27 @@
-<h1>Add a New Project</h1><div class="add_form">
-    <form [formGroup]="projForm" (ngSubmit)="onSubmit()">
-        <div>
-          <label>
-            Project Title:<br>
-            <input type="text" formControlName="title">
-          </label>
-        </div>
-        <div>
-          <label for="type">Project type:</label>
+<h1>Add a New Project</h1>
+<div class="add_form">
+  <form [formGroup]="projForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>
+        Project Title:<br>
+        <input type="text" formControlName="title">
+      </label>
+    </div>
+    <div>
+      <label for="type">Project type:</label>
 
-<select name="type" formControlName="type">
-  <option value="wildlife">Wildlife</option>
-  <option value="water">Oceans and Streams</option>
-  <option value="weather">Weather</option>
-  <option value="plants">Plants</option>
-</select>
-        </div>
-        <div>
-        <label>
-            Description:<br>
-            <textarea name="descr" formControlName="description"></textarea>
-          </label><br>
-        </div>
-        <button class="btn-round-red" type="submit">Submit</button>
-      </form><br>
-      
-
+      <select name="type" formControlName="type">
+        <option value="wildlife">Wildlife</option>
+        <option value="water">Oceans and Streams</option>
+        <option value="weather">Weather</option>
+        <option value="plants">Plants</option>
+      </select>
+    </div>
+    <div>
+      <label>
+        Description:<br>
+        <textarea name="descr" formControlName="description"></textarea>
+      </label><br>
+    </div>
+    <button class="btn-round-red" type="submit">Submit</button>
+  </form><br>
