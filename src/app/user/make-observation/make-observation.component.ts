@@ -42,7 +42,7 @@ export class MakeObservationComponent implements OnInit {
 
   async onSubmit() {
     let obsData = {
-      user: localStorage.username,
+      user: localStorage.user,
       title: this.obsForm.get('title').value,
       text: this.obsForm.get('observation').value,
       date: this.obsForm.get('date').value,

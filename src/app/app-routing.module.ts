@@ -33,7 +33,7 @@ const routes: Routes = [
       { path: 'observations', component: UserObservationsComponent },
       { path: 'admin-dashboard', component: AdminDashboardComponent },
       { path: 'add-project', component: AddProjectComponent },
-      { path: 'add-observation', component: MakeObservationComponent}
+      { path: 'add-observation', component: MakeObservationComponent},
     ],
   },
 ];
