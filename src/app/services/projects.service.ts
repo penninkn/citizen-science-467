@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ProjectsService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAllProjects(): Promise<any> {
     return this.http
@@ -19,4 +19,10 @@ export class ProjectsService {
       .get(environment.backendUrl + 'project/' + projectID)
       .toPromise();
   }
+  getProjectsByType(type): Promise<any> {
+    return this.http
+      .get(environment.backendUrl + 'project/type?type=' + type)
+      .toPromise();
+  }
 }
+
