@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { UserService } from './../../services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -47,7 +48,7 @@ export class MakeObservationComponent implements OnInit {
 
   async onSubmit() {
     let obsData = {
-      user: this.user.id,
+      user: this.user._id,
       title: this.obsForm.get('title').value,
       text: this.obsForm.get('observation').value,
       date: this.obsForm.get('date').value,
@@ -58,7 +59,7 @@ export class MakeObservationComponent implements OnInit {
     };
     try {
       const res: any = await this.http
-        .post('http://localhost:3000/observation/create', obsData)
+          .post(environment.backendUrl + 'observation/create', obsData)
         .toPromise();
 
       console.log(res);

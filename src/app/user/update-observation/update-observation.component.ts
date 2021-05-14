@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { UserService } from './../../services/user.service';
 import { ObservationService } from './../../services/observation.service';
 import { HttpClient } from '@angular/common/http';
@@ -5,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GeolocationService } from '@ng-web-apis/geolocation';
-import { DatePipe} from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-update-observation',
@@ -50,7 +51,6 @@ export class UpdateObservationComponent implements OnInit {
   });
 
   async ngOnInit() {
-    
     this.observationID = this.route.snapshot.paramMap.get('id');
     this.observation = await this.observationService.getOneObservation(
       this.observationID
@@ -89,7 +89,10 @@ export class UpdateObservationComponent implements OnInit {
     console.log(obsData);
     try {
       const res: any = await this.http
-        .put('http://localhost:3000/observation/' + this.observationID, obsData)
+        .put(
+          environment.backendUrl + 'observation/' + this.observationID,
+          obsData
+        )
         .toPromise();
 
       console.log(res);
