@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { ObservationService } from './../../services/observation.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -20,10 +21,13 @@ export class UpdateObservationComponent implements OnInit {
   public state;
   public date;
 
+  user: any;
+
   public observation;
   public observationID;
 
   constructor(
+    private usersService: UserService,
     private datepipe: DatePipe,
     private fb: FormBuilder,
     private datePipe: DatePipe,
@@ -46,10 +50,14 @@ export class UpdateObservationComponent implements OnInit {
   });
 
   async ngOnInit() {
+    
     this.observationID = this.route.snapshot.paramMap.get('id');
     this.observation = await this.observationService.getOneObservation(
       this.observationID
     );
+
+    this.user = await this.usersService.getUserInfo();
+
     this.title = this.observation.title;
     this.observationText = this.observation.text;
     this.city = this.observation.city;
@@ -69,7 +77,7 @@ export class UpdateObservationComponent implements OnInit {
 
   async onSubmit() {
     let obsData = {
-      user: localStorage.user,
+      user: this.user.id,
       title: this.obsForm.get('title').value,
       text: this.obsForm.get('observation').value,
       date: this.obsForm.get('date').value,

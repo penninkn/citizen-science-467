@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
@@ -12,8 +13,10 @@ import { GeolocationService } from '@ng-web-apis/geolocation';
 export class MakeObservationComponent implements OnInit {
   public latitude;
   public longitude;
+  user: any;
 
   constructor(
+    private usersService: UserService,
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
@@ -31,7 +34,9 @@ export class MakeObservationComponent implements OnInit {
     latitude: Number,
   });
 
-  ngOnInit(): void {}
+  async ngOnInit() {
+    this.user = await this.usersService.getUserInfo();
+  }
 
   getLocation() {
     this.geolocation$.subscribe((position) => {
@@ -42,7 +47,7 @@ export class MakeObservationComponent implements OnInit {
 
   async onSubmit() {
     let obsData = {
-      user: localStorage.user,
+      user: this.user.id,
       title: this.obsForm.get('title').value,
       text: this.obsForm.get('observation').value,
       date: this.obsForm.get('date').value,
@@ -61,9 +66,6 @@ export class MakeObservationComponent implements OnInit {
       window.alert(err.message);
     }
     // add put obs id to user
-
-
-
     this.obsForm.reset();
   }
 }
