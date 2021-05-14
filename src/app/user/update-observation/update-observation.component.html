@@ -6,8 +6,8 @@
       <label>
         Title:<br />
         <input
-          [(ngModel)]="title"
-          value="{{ title }}"
+          [(ngModel)]=this.observation.title
+          value="{{ this.observation.title }}"
           type="text"
           formControlName="title"
         />
