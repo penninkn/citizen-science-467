@@ -16,10 +16,6 @@ import { DatePipe } from '@angular/common';
 export class UpdateObservationComponent implements OnInit {
   public latitude;
   public longitude;
-  public title;
-  public observationText;
-  public city;
-  public state;
   public date;
 
   user: any;
@@ -58,10 +54,6 @@ export class UpdateObservationComponent implements OnInit {
 
     this.user = await this.usersService.getUserInfo();
 
-    this.title = this.observation.title;
-    this.observationText = this.observation.text;
-    this.city = this.observation.city;
-    this.state = this.observation.state;
     this.date = this.datepipe.transform(this.observation.date, 'yyyy-MM-dd');
     this.longitude = this.observation.longitude;
     this.latitude = this.observation.latitude;

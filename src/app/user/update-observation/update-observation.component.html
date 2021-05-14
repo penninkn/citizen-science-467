@@ -18,8 +18,8 @@
       <label>
         Observation:<br />
         <textarea
-          [(ngModel)]="observationText"
-          value="{{ observationText }}"
+          [(ngModel)]=this.observation.text
+          value="{{ this.observation.text }}"
           name="obs"
           formControlName="observation"
         ></textarea></label
@@ -30,8 +30,8 @@
       <label>
         City:<br />
         <input 
-        [(ngModel)]="city"
-        value="{{ city }}"
+        [(ngModel)]=this.observation.city
+        value="{{ this.observation.city }}"
         type="text" 
         formControlName="city" /> </label
       ><br />
@@ -41,8 +41,8 @@
       <label>
         State:<br />
         <input
-        [(ngModel)]="state"
-        value="{{ state }}"
+        [(ngModel)]=this.observation.state
+        value="{{ this.observation.state }}"
         type="text" formControlName="state" /> </label
       ><br />
     </div>
@@ -51,8 +51,8 @@
       <label>
         Date:<br />
         <input
-        [(ngModel)]="date"
-        value="{{ date | date:'yyyy-MM-dd' }}"
+        [(ngModel)]=this.date
+        value="{{ this.date | date:'yyyy-MM-dd' }}"
          type="date" formControlName="date" /> </label
       ><br />
     </div>
