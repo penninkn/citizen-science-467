@@ -3,18 +3,19 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
-  CanActivateChild,
   Router,
+  CanActivate,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { UserService } from '../services/user.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivateChild {
-  constructor(private router: Router) {}
+export class DashboardGuard implements CanActivate {
+  constructor(private router: Router, private userService: UserService) {}
 
-  canActivateChild(
+  canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ):
@@ -22,12 +23,13 @@ export class AuthGuard implements CanActivateChild {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    if (isLoggedIn) {
+    console.log('in dashboardguard');
+    const isAdmin = this.userService.getIsAdmin();
+    if (isAdmin) {
+      this.router.navigateByUrl('admin-dashboard');
       return true;
     }
-    this.router.navigateByUrl('login');
-    window.alert('Please login to continue...');
+    this.router.navigateByUrl('dashboard');
     return false;
   }
 }
