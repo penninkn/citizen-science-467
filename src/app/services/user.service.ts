@@ -14,4 +14,12 @@ export class UserService {
       .get(environment.backendUrl + 'users/' + username)
       .toPromise();
   }
+
+  async getIsAdmin() {
+    const user: any = await this.getUserInfo();
+    if (user.admin) {
+      return true;
+    }
+    return false;
+  }
 }

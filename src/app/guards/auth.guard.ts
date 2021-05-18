@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {
-  CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
@@ -24,11 +23,11 @@ export class AuthGuard implements CanActivateChild {
     | boolean
     | UrlTree {
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    console.log(isLoggedIn);
     if (isLoggedIn) {
       return true;
     }
     this.router.navigateByUrl('login');
+    window.alert('Please login to continue...');
     return false;
   }
 }

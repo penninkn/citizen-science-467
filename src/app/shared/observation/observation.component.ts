@@ -9,6 +9,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
 })
 export class ObservationComponent implements OnInit {
   project;
+  projectId;
 
   constructor(
     private route: ActivatedRoute,
@@ -16,7 +17,7 @@ export class ObservationComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    const projectId = this.route.snapshot.paramMap.get('id');
-    this.project = await this.projectsService.getOneProject(projectId);
+    this.projectId = this.route.snapshot.paramMap.get('id');
+    this.project = await this.projectsService.getOneProject(this.projectId);
   }
 }
