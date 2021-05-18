@@ -15,21 +15,15 @@ import { UserService } from '../services/user.service';
 export class DashboardGuard implements CanActivate {
   constructor(private router: Router, private userService: UserService) {}
 
-  canActivate(
+  async canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    console.log('in dashboardguard');
-    const isAdmin = this.userService.getIsAdmin();
+  ): Promise<boolean> {
+    const isAdmin = await this.userService.getIsAdmin();
     if (isAdmin) {
       this.router.navigateByUrl('admin-dashboard');
-      return true;
+      return false;
     }
-    this.router.navigateByUrl('dashboard');
-    return false;
+    return true;
   }
 }
