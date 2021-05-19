@@ -9,9 +9,16 @@ export class ObservationService {
 
   constructor(private http: HttpClient) { }
 
+  getAllObservations(): Promise<any> {
+    return this.http
+      .get(environment.backendUrl + 'observation/observations')
+      .toPromise();
+  }
+
   getOneObservation(observationID): Promise<any> {
     return this.http
       .get(environment.backendUrl + 'observation/' + observationID)
       .toPromise();
   }
+
 }

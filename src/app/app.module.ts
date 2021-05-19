@@ -14,7 +14,7 @@ import { AccountModule } from './account/account.module';
 import { UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
 import { AddProjectComponent} from './admin/add-project/add-project.component';
 import { UpdateObservationComponent } from './user/update-observation/update-observation.component'
-import { DatePipe} from '@angular/common'
+import { DatePipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { DatePipe} from '@angular/common'
     UserDashboardComponent,
     MakeObservationComponent,
     AddProjectComponent,
-    UpdateObservationComponent
+    UpdateObservationComponent,
   ],
   imports: [
     AppRoutingModule,
