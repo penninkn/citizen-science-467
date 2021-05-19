@@ -7,5 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  async ngOnInit() {}
+  async ngOnInit() {
+
+  }
 }
