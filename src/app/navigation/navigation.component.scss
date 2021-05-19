@@ -1,0 +1,50 @@
+$orange1:#fa8225;
+$red1: #d40d38;
+$green1:#45c474;
+$purple1:#8D34CA;
+
+.nav_btn {
+	display:inline-block;
+	width:45px;
+	height:45px;
+    border:none;
+    border-radius:8px;
+}
+
+img {
+	margin:auto;
+    width:100%;
+}
+
+div {
+    width:90%;
+    margin:auto;
+    padding-bottom: 50px;
+}
+
+#home {
+    float:left;
+    margin-right:20px;
+    border:none;
+    background-color: $red1;
+}
+
+#back {
+    float:left;
+    border:none;
+    background-color: $orange1;
+}
+
+#logout {
+    float: right;
+    border:none;
+    background-color: $green1;
+    
+}
+
+#profile {
+    float:right;
+    border:none;
+    margin-right:20px;
+    background-color:$purple1;
+}
