@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  navBar = false;
+
   constructor() { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (isLoggedIn) {
+      this.navBar = true;
+    }
   }
+
 
 }
