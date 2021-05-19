@@ -1,3 +1,4 @@
+//import { MakeObservationComponent } from './../user/make-observation/make-observation.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects/projects.component';
@@ -12,6 +13,7 @@ import { RouterModule } from '@angular/router';
     ObservationComponent,
     ProjectDescriptionComponent,
     ProjectObservationsComponent,
+    //MakeObservationComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [ProjectsComponent],
