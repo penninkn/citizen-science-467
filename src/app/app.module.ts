@@ -11,10 +11,11 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { UserObservationsComponent } from './user/user-observations/user-observations.component';
 import { SharedModule } from './shared/shared.module';
 import { AccountModule } from './account/account.module';
-import { UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
-import { AddProjectComponent} from './admin/add-project/add-project.component';
 import { UpdateObservationComponent } from './user/update-observation/update-observation.component'
 import { DatePipe} from '@angular/common';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { AddProjectComponent } from './admin/add-project/add-project.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { DatePipe} from '@angular/common';
     MakeObservationComponent,
     AddProjectComponent,
     UpdateObservationComponent,
+    AddProjectComponent,
+    NavigationComponent
   ],
   imports: [
     AppRoutingModule,
@@ -38,4 +41,4 @@ import { DatePipe} from '@angular/common';
   providers: [DatePipe],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

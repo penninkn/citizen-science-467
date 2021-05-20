@@ -1,1 +1,17 @@
-<p>project-observations works!</p>
+<table class="proj_display">
+  <tr>
+    <th>TITLE</th>
+    <th>TEXT</th>
+    <th>LOCATION</th>
+    <th>DATE</th>
+  </tr>
+  <tr *ngFor="let observation of observations">
+    <td>{{ observation?.title }}</td>
+    <td>{{ observation?.text }}</td>
+    <td>
+      {{ observation?.city }} <span *ngIf="observation.state">, </span>
+      {{ observation?.state }}
+    </td>
+    <td>{{ observation?.date }}</td>
+  </tr>
+</table>

@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {}
   message: string;
   created: string;
 
@@ -26,14 +26,12 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit() {
-
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       this.created = params['created'];
     });
     if (this.created == 'success') {
-      this.message = "Account created successfully. Please log in below!"
+      this.message = 'Account created successfully. Please log in below!';
     }
-
 
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
     if (isLoggedIn) {
@@ -51,6 +49,8 @@ export class LoginComponent implements OnInit {
       const res: any = await this.http
         .post(environment.backendUrl + 'auth/login', formData)
         .toPromise();
+      console.log(res);
+      localStorage.setItem('user', res._id);
       localStorage.setItem('username', res.username);
       localStorage.setItem('user', res._id);
      console.log(res);

@@ -1,13 +1,18 @@
-import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ObservationService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  getProjectObservations(projectId: string): Promise<any> {
+    return this.http
+      .get(environment.backendUrl + 'observation/project/' + projectId)
+      .toPromise();
+  }
 
   getAllObservations(): Promise<any> {
     return this.http
@@ -15,10 +20,22 @@ export class ObservationService {
       .toPromise();
   }
 
-  getOneObservation(observationID): Promise<any> {
+  getObservationsByUserAndProject(
+    projectId: string,
+    username: string
+  ): Promise<any> {
+    const request = {
+      p_id: projectId,
+      user: username,
+    };
     return this.http
-      .get(environment.backendUrl + 'observation/' + observationID)
+      .post(environment.backendUrl + 'observation/project/user', request)
       .toPromise();
   }
 
+  getUserObservations(projectId: string): Promise<any> {
+    return this.http
+      .get(environment.backendUrl + 'observation/user/' + projectId)
+      .toPromise();
+  }
 }

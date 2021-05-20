@@ -14,6 +14,8 @@ import { ObservationComponent } from './shared/observation/observation.component
 import { ProjectObservationsComponent } from './shared/project-observations/project-observations.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RegistrationComponent } from './account/registration/registration.component';
+import { DashboardGuard } from './guards/dashboard.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -32,9 +34,17 @@ const routes: Routes = [
         component: ProjectObservationsComponent,
       },
       { path: 'projects/observations/:id', component: ObservationComponent },
-      { path: 'dashboard', component: UserDashboardComponent },
+      {
+        path: 'dashboard',
+        component: UserDashboardComponent,
+        canActivate: [DashboardGuard],
+      },
       { path: 'observations', component: UserObservationsComponent },
-      { path: 'admin-dashboard', component: AdminDashboardComponent },
+      {
+        path: 'admin-dashboard',
+        component: AdminDashboardComponent,
+        canActivate: [AdminGuard],
+      },
       { path: 'add-project', component: AddProjectComponent },
       { path: 'add-observation', component: MakeObservationComponent},
       { path: 'update-observation/:id', component: UpdateObservationComponent},
@@ -46,4 +56,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -8,6 +8,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
   styleUrls: ['./project-description.component.scss'],
 })
 export class ProjectDescriptionComponent implements OnInit {
+  projectId;
   project;
   constructor(
     private route: ActivatedRoute,
@@ -15,7 +16,7 @@ export class ProjectDescriptionComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    const projectId = this.route.snapshot.paramMap.get('id');
-    this.project = await this.projectsService.getOneProject(projectId);
+    this.projectId = this.route.snapshot.paramMap.get('id');
+    this.project = await this.projectsService.getOneProject(this.projectId);
   }
 }
