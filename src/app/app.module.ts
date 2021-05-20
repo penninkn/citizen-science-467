@@ -10,8 +10,9 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { UserObservationsComponent } from './user/user-observations/user-observations.component';
 import { SharedModule } from './shared/shared.module';
 import { AccountModule } from './account/account.module';
-import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
-import {AddProjectComponent} from './admin/add-project/add-project.component'
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { AddProjectComponent } from './admin/add-project/add-project.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {AddProjectComponent} from './admin/add-project/add-project.component'
     UserObservationsComponent,
     LoginComponent,
     UserDashboardComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    NavigationComponent
   ],
   imports: [
     AppRoutingModule,
@@ -33,4 +35,4 @@ import {AddProjectComponent} from './admin/add-project/add-project.component'
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
