@@ -1,7 +1,7 @@
-<h1>Your observations for:</h1>
-<h2>{{ project?.title }}</h2>
+<h1>All observations for:</h1>
+<h3>{{ project?.title }}</h3>
 
 <app-project-observations
   [projectId]="projectId"
-  [getByUser]="true"
+  [getByUser]="false"
 ></app-project-observations>

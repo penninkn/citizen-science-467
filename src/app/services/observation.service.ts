@@ -38,4 +38,10 @@ export class ObservationService {
       .get(environment.backendUrl + 'observation/user/' + projectId)
       .toPromise();
   }
+
+  getOneObservation(observationId): Promise<any> {
+    return this.http
+      .get(environment.backendUrl + 'observation/' + observationId)
+      .toPromise();
+  }
 }

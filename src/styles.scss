@@ -1,71 +1,79 @@
-
-$blue1: #0198E9;
+$blue1: #0198e9;
 $red1: #d40d38;
 
-
 body {
-    background-image: radial-gradient( rgba(255, 233, 91, 0.24), rgba(253, 192, 26, 0.35)), 
-    url('tree-4373601_640.png');
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    min-height:100%;
-    
+  background-image: radial-gradient(
+      rgba(255, 233, 91, 0.24),
+      rgba(253, 192, 26, 0.35)
+    ),
+    url("tree-4373601_640.png");
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  min-height: 100%;
 }
 
 #site-container {
-    margin:auto;
-    width:70%;
-    min-height:100%;
+  margin: auto;
+  width: 70%;
+  min-height: 100%;
+}
 
+h1 {
+  color: $blue1;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  color: $red1;
+}
+
+h4 {
+  text-align: center;
 }
 
 .btn-round-red {
-    background-color: $red1;
-    color:white;
-    border:none;
-    padding: 10px 15px;
-    text-align:center;
-    border-radius:8px;
-    font-size:16px;
-
+  background-color: $red1;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
-
 .btn-round-blue {
-    background-color: $blue1;
-    color:white;
-    border:none;
-    padding: 10px 15px;
-    text-align:center;
-    border-radius:8px;
-    font-size:16px;
-
+  background-color: $blue1;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .btn-blue-outline {
-    color:$blue1;
-    background:transparent;
-    border:2px solid $blue1;
-    padding: 10px 15px;
-    text-align:center;
-    border-radius: 8px;
-    font-size:16px;
-
+  color: $blue1;
+  background: transparent;
+  border: 2px solid $blue1;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .btn-blue-outline-large {
-    color:$blue1;
-    background:transparent;
-    border:2px solid $blue1;
-    padding: 10px 15px;
-    text-align:center;
-    border-radius: 8px;
-    font-size:24px;
-
+  color: $blue1;
+  background: transparent;
+  border: 2px solid $blue1;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 24px;
 }
 
-
 @media only screen and (max-width: 600px) {
-    #site-container {
-        width:90%;
-    }
+  #site-container {
+    width: 90%;
+  }
 }
