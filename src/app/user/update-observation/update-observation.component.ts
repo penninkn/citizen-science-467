@@ -33,7 +33,7 @@ export class UpdateObservationComponent implements OnInit {
     private observationService: ObservationService,
     private route: ActivatedRoute,
     private readonly geolocation$: GeolocationService
-  ) {}
+  ) { }
 
   obsForm = this.fb.group({
     username: [''],
@@ -48,7 +48,7 @@ export class UpdateObservationComponent implements OnInit {
 
   async ngOnInit() {
     this.observationID = this.route.snapshot.paramMap.get('id');
-    this.observation = await this.observationService.getOneObservation(
+    this.observation = await this.observationService.getObservation(
       this.observationID
     );
 

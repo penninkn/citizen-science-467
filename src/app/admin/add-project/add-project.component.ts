@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-add-project',
@@ -22,7 +23,7 @@ export class AddProjectComponent implements OnInit {
   projForm = this.fb.group({
     title: [''],
     type: [''],
-    description:[''],
+    description: [''],
   });
 
   async onSubmit() {
@@ -35,7 +36,7 @@ export class AddProjectComponent implements OnInit {
 
     try {
       const res = await this.http
-        .post('http://localhost:3000/project/create', formData)
+        .post(environment.backendUrl + 'project/create', formData)
         .toPromise();
 
       this.router.navigateByUrl('projects');

@@ -23,6 +23,18 @@ body {
     
 }
 
+input {
+    width:100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+form {
+    width:90%;
+    margin:auto;
+}
+
 button:focus {
     outline:none;
 
@@ -51,6 +63,10 @@ button:focus {
 
 }
 
+.btn-round-red:focus {
+    background-color: $red2;
+
+}
 
 .btn-round-blue {
     background-color: $blue1;
@@ -64,6 +80,11 @@ button:focus {
 }
 
 .btn-round-blue:hover {
+    background-color: $blue2;
+
+}
+
+.btn-round-blue:focus {
     background-color: $blue2;
 
 }
@@ -84,6 +105,11 @@ button:focus {
 
 }
 
+.btn-round-green:focus {
+    background-color: $green2;
+
+}
+
 .btn-round-purple {
     background-color: $purple1;
     color:white;
@@ -100,6 +126,11 @@ button:focus {
 
 }
 
+.btn-round-purple:focus {
+    background-color: $purple2;
+
+}
+
 .btn-round-orange {
     background-color: $orange1;
     color:white;
@@ -112,6 +143,11 @@ button:focus {
 }
 
 .btn-round-orange:hover {
+    background-color: $orange2;
+
+}
+
+.btn-round-orange:focus {
     background-color: $orange2;
 
 }

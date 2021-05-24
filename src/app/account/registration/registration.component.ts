@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -46,7 +47,7 @@ export class RegistrationComponent implements OnInit {
 
     try {
       const res = await this.http
-        .post('http://localhost:3000/auth/register', formData)
+        .post(environment.backendUrl + 'auth/register', formData)
         .toPromise();
 
       this.router.navigateByUrl('login?created=success');

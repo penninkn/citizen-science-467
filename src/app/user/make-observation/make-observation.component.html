@@ -1,4 +1,4 @@
-<h1>Add a New Observation</h1>
+<h2>Add a New Observation</h2>
 
 <div class="obs_form">
   <form [formGroup]="obsForm" (ngSubmit)="onSubmit()">
@@ -33,7 +33,7 @@
         <input type="date" formControlName="date" /> </label><br />
     </div>
 
-    <button type="button" class="btn-blue-outline" (click)="getLocation()">
+    <button type="button" class="btn-round-green" (click)="getLocation()">
       Get Location
     </button>
 
@@ -47,7 +47,7 @@
         <input [(ngModel)]="latitude" type="number" formControlName="latitude" /> </label><br />
     </div>
 
-    <button class="btn-blue-outline" type="submit">Submit</button><br />
+    <button class="btn-round-red" type="submit">Submit</button><br />
   </form>
   <br />
 </div>

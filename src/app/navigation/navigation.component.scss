@@ -1,23 +1,34 @@
-$orange1:#fa8225;
-$red1: #d40d38;
-$green1:#45c474;
-$purple1:#8D34CA;
-$red2:#FC3761;
-$green2:#6CE89A;
-$orange2:#FFAB5C;
-$purple2:#B25EEB;
-
-.nav_btn {
-	display:inline-block;
+#nav-btn-1 {
 	width:45px;
 	height:45px;
     border:none;
     border-radius:8px;
+    float:left;
+    padding:10px;
+}
+
+#nav-btn-2 {
+	width:45px;
+	height:45px;
+    border:none;
+    border-radius:8px;
+    float:left;
+    margin-left:20px;
+    padding:10px;
+}
+
+#nav-btn-3 {
+	width:45px;
+	height:45px;
+    border:none;
+    border-radius:8px;
+    float:right;
+    padding:10px;
 }
 
 img {
-	margin:auto;
-    width:100%;
+    height:95%;
+    margin:auto;
 }
 
 div {
@@ -26,45 +37,3 @@ div {
     padding-bottom: 50px;
 }
 
-#home {
-    float:left;
-    margin-right:20px;
-    border:none;
-    background-color: $red1;
-}
-
-#home:hover {
-    background-color:$red2;
-}
-
-#back {
-    float:left;
-    border:none;
-    background-color: $orange1;
-}
-
-#back:hover {
-    background-color:$orange2;
-}
-
-#logout {
-    float: right;
-    border:none;
-    background-color: $green1;
-    
-}
-
-#logout:hover {
-    background-color:$green2;
-}
-
-#profile {
-    float:right;
-    border:none;
-    margin-right:20px;
-    background-color:$purple1;
-}
-
-#profile:hover {
-    background-color:$purple2;
-}
