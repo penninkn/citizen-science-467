@@ -1,3 +1,4 @@
+import { DownloadObservationsComponent } from './download-observations/download-observations.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects/projects.component';
@@ -12,8 +13,9 @@ import { RouterModule } from '@angular/router';
     ObservationComponent,
     ProjectDescriptionComponent,
     ProjectObservationsComponent,
+    DownloadObservationsComponent,
   ],
   imports: [CommonModule, RouterModule],
-  exports: [ProjectsComponent],
+  exports: [ProjectsComponent, DownloadObservationsComponent],
 })
 export class SharedModule {}

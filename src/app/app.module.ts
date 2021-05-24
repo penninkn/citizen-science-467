@@ -1,3 +1,4 @@
+import { MakeObservationComponent } from './user/make-observation/make-observation.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,9 +11,11 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { UserObservationsComponent } from './user/user-observations/user-observations.component';
 import { SharedModule } from './shared/shared.module';
 import { AccountModule } from './account/account.module';
-import {UserDashboardComponent} from './user/user-dashboard/user-dashboard.component';
-import {AddProjectComponent} from './admin/add-project/add-project.component';
-import { NavigationComponent } from './navigation/navigation.component'
+import { UpdateObservationComponent } from './user/update-observation/update-observation.component'
+import { DatePipe } from '@angular/common';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { AddProjectComponent } from './admin/add-project/add-project.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { NavigationComponent } from './navigation/navigation.component'
     UserObservationsComponent,
     LoginComponent,
     UserDashboardComponent,
+    MakeObservationComponent,
+    AddProjectComponent,
+    UpdateObservationComponent,
     AddProjectComponent,
     NavigationComponent
   ],
@@ -32,7 +38,7 @@ import { NavigationComponent } from './navigation/navigation.component'
     ReactiveFormsModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

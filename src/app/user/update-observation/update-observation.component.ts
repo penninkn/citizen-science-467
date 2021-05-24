@@ -1,28 +1,37 @@
-import { SharedModule } from './../../shared/shared.module';
-import { DownloadObservationsComponent } from '../../shared/download-observations/download-observations.component';
 import { environment } from './../../../environments/environment';
 import { UserService } from './../../services/user.service';
+import { ObservationService } from './../../services/observation.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { GeolocationService } from '@ng-web-apis/geolocation';
+import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-make-observation',
-  templateUrl: './make-observation.component.html',
-  styleUrls: ['./make-observation.component.scss'],
+  selector: 'app-update-observation',
+  templateUrl: './update-observation.component.html',
+  styleUrls: ['./update-observation.component.scss'],
 })
-export class MakeObservationComponent implements OnInit {
+export class UpdateObservationComponent implements OnInit {
   public latitude;
   public longitude;
+  public date;
+
   user: any;
+
+  public observation;
+  public observationID;
 
   constructor(
     private usersService: UserService,
+    private datepipe: DatePipe,
     private fb: FormBuilder,
+    private datePipe: DatePipe,
     private http: HttpClient,
     private router: Router,
+    private observationService: ObservationService,
+    private route: ActivatedRoute,
     private readonly geolocation$: GeolocationService
   ) {}
 
@@ -38,7 +47,17 @@ export class MakeObservationComponent implements OnInit {
   });
 
   async ngOnInit() {
+    this.observationID = this.route.snapshot.paramMap.get('id');
+    this.observation = await this.observationService.getOneObservation(
+      this.observationID
+    );
+
     this.user = await this.usersService.getUserInfo();
+
+    this.date = this.datepipe.transform(this.observation.date, 'yyyy-MM-dd');
+    this.longitude = this.observation.longitude;
+    this.latitude = this.observation.latitude;
+    console.log(this.observation);
   }
 
   getLocation() {
@@ -50,7 +69,7 @@ export class MakeObservationComponent implements OnInit {
 
   async onSubmit() {
     let obsData = {
-      user: this.user._id,
+      user: this.user.id,
       title: this.obsForm.get('title').value,
       text: this.obsForm.get('observation').value,
       date: this.obsForm.get('date').value,
@@ -59,19 +78,19 @@ export class MakeObservationComponent implements OnInit {
       longitude: this.obsForm.get('longitude').value,
       latitude: this.obsForm.get('latitude').value,
     };
+    console.log(obsData);
     try {
       const res: any = await this.http
-          .post(environment.backendUrl + 'observation/create', obsData)
+        .put(
+          environment.backendUrl + 'observation/' + this.observationID,
+          obsData
+        )
         .toPromise();
 
       console.log(res);
     } catch (err) {
       window.alert(err.message);
     }
-    // add put obs id to user
     this.obsForm.reset();
   }
-}
-function username(username: any) {
-  throw new Error('Function not implemented.');
 }

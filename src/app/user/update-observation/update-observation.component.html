@@ -1,0 +1,87 @@
+<h1>Update Observation</h1>
+
+<div class="obs_form">
+  <form [formGroup]="obsForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>
+        Title:<br />
+        <input
+          [(ngModel)]=this.observation.title
+          value="{{ this.observation.title }}"
+          type="text"
+          formControlName="title"
+        />
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Observation:<br />
+        <textarea
+          [(ngModel)]=this.observation.text
+          value="{{ this.observation.text }}"
+          name="obs"
+          formControlName="observation"
+        ></textarea></label
+      ><br />
+    </div>
+
+    <div>
+      <label>
+        City:<br />
+        <input 
+        [(ngModel)]=this.observation.city
+        value="{{ this.observation.city }}"
+        type="text" 
+        formControlName="city" /> </label
+      ><br />
+    </div>
+
+    <div>
+      <label>
+        State:<br />
+        <input
+        [(ngModel)]=this.observation.state
+        value="{{ this.observation.state }}"
+        type="text" formControlName="state" /> </label
+      ><br />
+    </div>
+
+    <div>
+      <label>
+        Date:<br />
+        <input
+        [(ngModel)]=this.date
+        value="{{ this.date | date:'yyyy-MM-dd' }}"
+         type="date" formControlName="date" /> </label
+      ><br />
+    </div>
+
+    <button type="button" class="btn-blue-outline" (click)="getLocation()">
+      Get Location
+    </button>
+
+    <div>
+      <label>
+        Longitude:<br />
+        <input
+          [(ngModel)]="longitude"
+          value="{{ longitude }}"
+          type="number"
+          formControlName="longitude"
+        /> </label
+      ><br />
+      <label>
+        Latitude:<br />
+        <input
+          [(ngModel)]="latitude"
+          type="number"
+          formControlName="latitude"
+        /> </label
+      ><br />
+    </div>
+
+    <button class="btn-blue-outline" type="submit">Submit</button><br />
+  </form>
+  <br />
+</div>
