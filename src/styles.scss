@@ -1,17 +1,17 @@
 $blue1: #0198e9;
 $red1: #d40d38;
-$orange1:#fa8225;
-$green1:#45c474;
-$purple1:#8D34CA;
-$red2:#FC3761;
-$blue2:#62C7FE;
-$green2:#6CE89A;
-$orange2:#FFAB5C;
-$purple2:#B25EEB;
+$orange1: #fa8225;
+$green1: #45c474;
+$purple1: #8d34ca;
+$red2: #fc3761;
+$blue2: #62c7fe;
+$green2: #6ce89a;
+$orange2: #ffab5c;
+$purple2: #b25eeb;
 
 h2 {
-    color:$red1;
-    text-align:center;
+  color: $red1;
+  text-align: center;
 }
 
 body {
@@ -26,136 +26,134 @@ body {
 }
 
 input {
-    width:100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 form {
-    width:90%;
-    margin:auto;
+  width: 90%;
+  margin: auto;
 }
 
 button:focus {
-    outline:none;
-
+  outline: none;
 }
 
 #site-container {
-    margin:auto;
-    width:70%;
-    padding-bottom:40px;
-    padding-top:40px;
+  margin: auto;
+  width: 70%;
+  padding-bottom: 40px;
+  padding-top: 40px;
 
-h1 {
-  color: $blue1;
-  text-align: center;
-}
+  h1 {
+    color: $blue1;
+    text-align: center;
+  }
 
-h3 {
-  text-align: center;
-  color: $red1;
-}
+  h3 {
+    text-align: center;
+    color: $red1;
+  }
 
-h4 {
-  text-align: center;
-}
-.btn-round-red:hover {
+  h4 {
+    text-align: center;
+  }
+
+  .btn-round-red {
+    background-color: $red1;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .btn-round-red:hover {
     background-color: $red2;
+  }
 
-}
-
-.btn-round-red:focus {
+  .btn-round-red:focus {
     background-color: $red2;
+  }
 
-}
+  .btn-round-blue {
+    background-color: $blue1;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+  }
 
-.btn-round-blue {
-  background-color: $blue1;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  text-align: center;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-.btn-round-blue:hover {
+  .btn-round-blue:hover {
     background-color: $blue2;
+  }
 
-}
-
-.btn-round-blue:focus {
+  .btn-round-blue:focus {
     background-color: $blue2;
+  }
 
-}
-
-.btn-round-green {
+  .btn-round-green {
     background-color: $green1;
-    color:white;
-    border:none;
+    color: white;
+    border: none;
     padding: 10px 15px;
-    text-align:center;
-    border-radius:8px;
-    font-size:16px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+  }
 
-}
-
-.btn-round-green:hover {
+  .btn-round-green:hover {
     background-color: $green2;
+  }
 
-}
-
-.btn-round-green:focus {
+  .btn-round-green:focus {
     background-color: $green2;
+  }
 
-}
-
-.btn-round-purple {
+  .btn-round-purple {
     background-color: $purple1;
-    color:white;
-    border:none;
+    color: white;
+    border: none;
     padding: 10px 15px;
-    text-align:center;
-    border-radius:8px;
-    font-size:16px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+  }
 
-}
-
-.btn-round-purple:hover {
+  .btn-round-purple:hover {
     background-color: $purple2;
+  }
 
-}
-
-.btn-round-purple:focus {
+  .btn-round-purple:focus {
     background-color: $purple2;
+  }
 
-}
-
-.btn-round-orange {
+  .btn-round-orange {
     background-color: $orange1;
-    color:white;
-    border:none;
+    color: white;
+    border: none;
     padding: 10px 15px;
-    text-align:center;
-    border-radius:8px;
-    font-size:16px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+  }
 
-}
-
-.btn-round-orange:hover {
+  .btn-round-orange:hover {
     background-color: $orange2;
+  }
 
-}
-
-.btn-round-orange:focus {
+  .btn-round-orange:focus {
     background-color: $orange2;
+  }
 
-}
-
-@media only screen and (max-width: 600px) {
-  #site-container {
-    width: 90%;
+  @media only screen and (max-width: 600px) {
+    #site-container {
+      width: 90%;
+    }
   }
 }

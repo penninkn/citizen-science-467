@@ -6,8 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ObservationService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getObservation(observationID: any): any {
     throw new Error('Method not implemented.');
@@ -47,12 +46,6 @@ export class ObservationService {
   getUserObservations(projectId: string): Promise<any> {
     return this.http
       .get(environment.backendUrl + 'observation/user/' + projectId)
-      .toPromise();
-  }
-
-  getOneObservation(observationId): Promise<any> {
-    return this.http
-      .get(environment.backendUrl + 'observation/' + observationId)
       .toPromise();
   }
 }
