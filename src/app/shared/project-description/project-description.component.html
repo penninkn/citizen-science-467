@@ -4,5 +4,8 @@
   <button class="btn-round-purple">Add an Observation</button>
 </div>
 
-<h3>My Past Observations for {{project?.title}}</h3>
-<app-project-observations [projectId]="projectId" [getByUser]="true"></app-project-observations>
+<h3>My Past Observations for {{ project?.title }}</h3>
+<app-project-observations
+  [projectId]="projectId"
+  [getByUser]="true"
+></app-project-observations>

@@ -19,6 +19,12 @@ export class ObservationService {
       .toPromise();
   }
 
+  getOneObservation(observationID): Promise<any> {
+    return this.http
+      .get(environment.backendUrl + 'observation/' + observationID)
+      .toPromise();
+  }
+
   getAllObservations(): Promise<any> {
     return this.http
       .get(environment.backendUrl + 'observation/observations')
@@ -41,6 +47,12 @@ export class ObservationService {
   getUserObservations(projectId: string): Promise<any> {
     return this.http
       .get(environment.backendUrl + 'observation/user/' + projectId)
+      .toPromise();
+  }
+
+  getOneObservation(observationId): Promise<any> {
+    return this.http
+      .get(environment.backendUrl + 'observation/' + observationId)
       .toPromise();
   }
 }
