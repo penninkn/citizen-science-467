@@ -1,0 +1,37 @@
+$orange1: #fa8225;
+$red1: #d40d38;
+$green1: #45c474;
+$purple1: #8d34ca;
+
+.nav_btn {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+}
+
+img {
+  margin: auto;
+  width: 100%;
+}
+
+div {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+#home {
+  margin-right: 20px;
+  background-color: $red1;
+}
+
+#logout {
+  background-color: $green1;
+}
+
+#profile {
+  margin-right: 20px;
+  background-color: $orange1;
+}

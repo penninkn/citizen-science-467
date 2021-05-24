@@ -61,7 +61,7 @@ export class MakeObservationComponent implements OnInit {
     };
     try {
       const res: any = await this.http
-          .post(environment.backendUrl + 'observation/create', obsData)
+        .post(environment.backendUrl + 'observation/create', obsData)
         .toPromise();
 
       console.log(res);

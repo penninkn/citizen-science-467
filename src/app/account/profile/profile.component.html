@@ -1,0 +1,24 @@
+<div class="main-content">
+  <h1>{{ user.first_name }}'s Profile</h1>
+  <div class="user-info">
+    <div>
+      <h3>Name:</h3>
+      <p>{{ user.first_name }} {{ user.last_name }}</p>
+    </div>
+    <div>
+      <h3>username:</h3>
+      <p>{{ user.username }}</p>
+    </div>
+    <div>
+      <h3>Age:</h3>
+      <p>{{ user.age }}</p>
+    </div>
+    <div>
+      <h3>Email:</h3>
+      <p>{{ user.email }}</p>
+    </div>
+  </div>
+  <div class="button-group">
+    <button class="btn-round-red" type="submit">Edit Profile</button>
+  </div>
+</div>

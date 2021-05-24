@@ -16,6 +16,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { RegistrationComponent } from './account/registration/registration.component';
 import { DashboardGuard } from './guards/dashboard.guard';
 import { AdminGuard } from './guards/admin.guard';
+import { ProfileComponent } from './account/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'logout', component: LogoutComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'projects/:id', component: ProjectDescriptionComponent },
+      { path: 'profile', component: ProfileComponent },
       {
         path: 'projects/observations',
         component: ProjectObservationsComponent,
@@ -46,8 +48,8 @@ const routes: Routes = [
         canActivate: [AdminGuard],
       },
       { path: 'add-project', component: AddProjectComponent },
-      { path: 'add-observation', component: MakeObservationComponent},
-      { path: 'update-observation/:id', component: UpdateObservationComponent},
+      { path: 'add-observation', component: MakeObservationComponent },
+      { path: 'update-observation/:id', component: UpdateObservationComponent },
     ],
   },
 ];

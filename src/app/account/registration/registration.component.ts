@@ -3,24 +3,23 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss']
+  styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit {
   message: string;
 
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private http: HttpClient,
-    private router: Router) { }
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.message = ""
-
+    this.message = '';
   }
-
 
   userForm = this.fb.group({
     first_name: [''],
@@ -29,7 +28,6 @@ export class RegistrationComponent implements OnInit {
     username: [''],
     email: [''],
     password: [''],
-
   });
 
   async onSubmit() {
@@ -54,7 +52,5 @@ export class RegistrationComponent implements OnInit {
       console.log(err);
       this.message = err.error.error;
     }
-
   }
 }
-
