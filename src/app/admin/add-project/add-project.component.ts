@@ -6,23 +6,21 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-project',
   templateUrl: './add-project.component.html',
-  styleUrls: ['./add-project.component.scss']
+  styleUrls: ['./add-project.component.scss'],
 })
 export class AddProjectComponent implements OnInit {
-
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   projForm = this.fb.group({
     title: [''],
     type: [''],
-    description:[''],
+    description: [''],
   });
 
   async onSubmit() {
@@ -30,7 +28,6 @@ export class AddProjectComponent implements OnInit {
       title: this.projForm.get('title').value,
       type: this.projForm.get('type').value,
       description: this.projForm.get('description').value,
-      observations: [],
     };
 
     try {
@@ -44,6 +41,3 @@ export class AddProjectComponent implements OnInit {
     }
   }
 }
-
-
-

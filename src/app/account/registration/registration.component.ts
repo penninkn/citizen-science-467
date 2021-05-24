@@ -39,7 +39,6 @@ export class RegistrationComponent implements OnInit {
       email: this.userForm.get('email').value,
       password: this.userForm.get('password').value,
       admin: false,
-      observations: [],
     };
 
     try {
