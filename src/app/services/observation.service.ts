@@ -14,6 +14,12 @@ export class ObservationService {
       .toPromise();
   }
 
+  getOneObservation(observationID): Promise<any> {
+    return this.http
+      .get(environment.backendUrl + 'observation/' + observationID)
+      .toPromise();
+  }
+
   getAllObservations(): Promise<any> {
     return this.http
       .get(environment.backendUrl + 'observation/observations')
