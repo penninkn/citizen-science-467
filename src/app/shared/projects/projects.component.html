@@ -1,27 +1,16 @@
 <h2>All Projects</h2>
-<table class="proj_display">
-  <tr>
-    <th>TITLE</th>
-    <th>TYPE</th>
-    <th colspan="2"></th>
-  </tr>
-  <!-- <tr *ngFor="let obs of observations"> -->
+<div>
+  <div *ngFor="let project of sampleProjects">
+    <div class="title">{{ project?.title }}</div>
+    <p>type: {{ project?.type }}</p>
 
-  <tr *ngFor="let project of sampleProjects">
-    <td>{{ project?.title }}</td>
-    <td>{{ project?.type }}</td>
-    <td>
-      <button [routerLink]="['/projects', project._id]" class="btn-round-blue">
+    <div id="btns"><button id="view" [routerLink]="['/projects', project._id]" class="btn-round-purple">
         View
       </button>
-    </td>
-    <td>
-      <button
-        [routerLink]="['/projects/observations', project._id]"
-        class="btn-round-blue"
-      >
+      <button id="proj_obs" [routerLink]="['/projects/observations', project._id]" class="btn-round-green">
         Observations
       </button>
-    </td>
-  </tr>
-</table>
+      <br><br><br><br>
+    </div>
+  </div>
+</div>

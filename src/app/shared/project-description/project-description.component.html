@@ -1,8 +1,8 @@
-<h1>{{ project?.title }}</h1>
-<p>{{ project?.description }}</p>
+<h2>{{ project?.title }}</h2>
+<div>
+  <p>{{ project?.description }}</p>
+  <button class="btn-round-purple">Add an Observation</button>
+</div>
 
-<h1>Observations</h1>
-<app-project-observations
-  [projectId]="projectId"
-  [getByUser]="false"
-></app-project-observations>
+<h3>Observations</h3>
+<app-project-observations [projectId]="projectId" [getByUser]="false"></app-project-observations>

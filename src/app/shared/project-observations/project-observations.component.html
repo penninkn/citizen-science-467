@@ -1,17 +1,12 @@
-<table class="proj_display">
-  <tr>
-    <th>TITLE</th>
-    <th>TEXT</th>
-    <th>LOCATION</th>
-    <th>DATE</th>
-  </tr>
-  <tr *ngFor="let observation of observations">
-    <td>{{ observation?.title }}</td>
-    <td>{{ observation?.text }}</td>
-    <td>
-      {{ observation?.city }} <span *ngIf="observation.state">, </span>
-      {{ observation?.state }}
-    </td>
-    <td>{{ observation?.date }}</td>
-  </tr>
-</table>
+<div class="list_all">
+  <div *ngFor="let observation of observations">
+    <div class="title">{{ observation?.title }}</div>
+    <p>{{observation?.date}}</p>
+    <p>{{ observation?.text }}</p>
+
+    <p>{{ observation?.city }} <span *ngIf="observation.state">, </span>
+      {{ observation?.state }}</p>
+    <br><br><br>
+  </div>
+  <button class="btn-round-green">Download All</button>
+</div>
