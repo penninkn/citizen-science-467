@@ -1,3 +1,5 @@
+import { UpdateObservationComponent } from './user/update-observation/update-observation.component';
+import { MakeObservationComponent } from './user/make-observation/make-observation.component';
 import { UserObservationsComponent } from './user/user-observations/user-observations.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -44,6 +46,8 @@ const routes: Routes = [
         canActivate: [AdminGuard],
       },
       { path: 'add-project', component: AddProjectComponent },
+      { path: 'add-observation', component: MakeObservationComponent},
+      { path: 'update-observation/:id', component: UpdateObservationComponent},
     ],
   },
 ];
