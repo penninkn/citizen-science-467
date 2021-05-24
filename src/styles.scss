@@ -46,114 +46,114 @@ button:focus {
   width: 70%;
   padding-bottom: 40px;
   padding-top: 40px;
+}
 
-  h1 {
-    color: $blue1;
-    text-align: center;
-  }
+h1 {
+  color: $blue1;
+  text-align: center;
+}
 
-  h3 {
-    text-align: center;
-    color: $red1;
-  }
+h3 {
+  text-align: center;
+  color: $red1;
+}
 
-  h4 {
-    text-align: center;
-  }
+h4 {
+  text-align: center;
+}
 
-  .btn-round-red {
-    background-color: $red1;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 16px;
-  }
+.btn-round-red {
+  background-color: $red1;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
+}
 
-  .btn-round-red:hover {
-    background-color: $red2;
-  }
+.btn-round-red:hover {
+  background-color: $red2;
+}
 
-  .btn-round-red:focus {
-    background-color: $red2;
-  }
+.btn-round-red:focus {
+  background-color: $red2;
+}
 
-  .btn-round-blue {
-    background-color: $blue1;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 16px;
-  }
+.btn-round-blue {
+  background-color: $blue1;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
+}
 
-  .btn-round-blue:hover {
-    background-color: $blue2;
-  }
+.btn-round-blue:hover {
+  background-color: $blue2;
+}
 
-  .btn-round-blue:focus {
-    background-color: $blue2;
-  }
+.btn-round-blue:focus {
+  background-color: $blue2;
+}
 
-  .btn-round-green {
-    background-color: $green1;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 16px;
-  }
+.btn-round-green {
+  background-color: $green1;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
+}
 
-  .btn-round-green:hover {
-    background-color: $green2;
-  }
+.btn-round-green:hover {
+  background-color: $green2;
+}
 
-  .btn-round-green:focus {
-    background-color: $green2;
-  }
+.btn-round-green:focus {
+  background-color: $green2;
+}
 
-  .btn-round-purple {
-    background-color: $purple1;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 16px;
-  }
+.btn-round-purple {
+  background-color: $purple1;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
+}
 
-  .btn-round-purple:hover {
-    background-color: $purple2;
-  }
+.btn-round-purple:hover {
+  background-color: $purple2;
+}
 
-  .btn-round-purple:focus {
-    background-color: $purple2;
-  }
+.btn-round-purple:focus {
+  background-color: $purple2;
+}
 
-  .btn-round-orange {
-    background-color: $orange1;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 16px;
-  }
+.btn-round-orange {
+  background-color: $orange1;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 16px;
+}
 
-  .btn-round-orange:hover {
-    background-color: $orange2;
-  }
+.btn-round-orange:hover {
+  background-color: $orange2;
+}
 
-  .btn-round-orange:focus {
-    background-color: $orange2;
-  }
+.btn-round-orange:focus {
+  background-color: $orange2;
+}
 
-  @media only screen and (max-width: 600px) {
-    #site-container {
-      width: 90%;
-    }
+@media only screen and (max-width: 600px) {
+  #site-container {
+    width: 90%;
   }
 }
