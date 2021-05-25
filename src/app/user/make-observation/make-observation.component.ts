@@ -5,7 +5,7 @@ import { UserService } from './../../services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GeolocationService } from '@ng-web-apis/geolocation';
 
 @Component({
@@ -17,13 +17,15 @@ export class MakeObservationComponent implements OnInit {
   public latitude;
   public longitude;
   user: any;
+  projectId: string;
 
   constructor(
     private usersService: UserService,
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private readonly geolocation$: GeolocationService
+    private readonly geolocation$: GeolocationService,
+    private route: ActivatedRoute
   ) {}
 
   obsForm = this.fb.group({
@@ -39,6 +41,7 @@ export class MakeObservationComponent implements OnInit {
 
   async ngOnInit() {
     this.user = await this.usersService.getUserInfo();
+    this.projectId = this.route.snapshot.paramMap.get('id');
   }
 
   getLocation() {
@@ -58,20 +61,18 @@ export class MakeObservationComponent implements OnInit {
       state: this.obsForm.get('state').value,
       longitude: this.obsForm.get('longitude').value,
       latitude: this.obsForm.get('latitude').value,
+      project: this.projectId,
     };
     try {
       const res: any = await this.http
         .post(environment.backendUrl + 'observation/create', obsData)
         .toPromise();
 
-      console.log(res);
+      window.alert('Thanks for making an observation!');
+      this.router.navigateByUrl('projects/' + this.projectId);
     } catch (err) {
       window.alert(err.message);
     }
-    // add put obs id to user
     this.obsForm.reset();
   }
-}
-function username(username: any) {
-  throw new Error('Function not implemented.');
 }

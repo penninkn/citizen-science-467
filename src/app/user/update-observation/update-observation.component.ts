@@ -33,7 +33,7 @@ export class UpdateObservationComponent implements OnInit {
     private observationService: ObservationService,
     private route: ActivatedRoute,
     private readonly geolocation$: GeolocationService
-  ) { }
+  ) {}
 
   obsForm = this.fb.group({
     username: [''],
@@ -48,7 +48,7 @@ export class UpdateObservationComponent implements OnInit {
 
   async ngOnInit() {
     this.observationID = this.route.snapshot.paramMap.get('id');
-    this.observation = await this.observationService.getObservation(
+    this.observation = await this.observationService.getOneObservation(
       this.observationID
     );
 
@@ -57,7 +57,6 @@ export class UpdateObservationComponent implements OnInit {
     this.date = this.datepipe.transform(this.observation.date, 'yyyy-MM-dd');
     this.longitude = this.observation.longitude;
     this.latitude = this.observation.latitude;
-    console.log(this.observation);
   }
 
   getLocation() {
@@ -86,8 +85,8 @@ export class UpdateObservationComponent implements OnInit {
           obsData
         )
         .toPromise();
-
-      console.log(res);
+      window.alert('Observation updated!');
+      this.router.navigateByUrl('projects/' + this.observation.project);
     } catch (err) {
       window.alert(err.message);
     }

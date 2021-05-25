@@ -3,8 +3,8 @@
   <form [formGroup]="projForm" (ngSubmit)="onSubmit()">
     <div>
       <label>
-        Project Title:<br>
-        <input type="text" formControlName="title">
+        Project Title:<br />
+        <input type="text" formControlName="title" />
       </label>
     </div>
     <div>
@@ -19,9 +19,17 @@
     </div>
     <div>
       <label>
-        Description:<br>
-        <textarea name="descr" formControlName="description"></textarea>
-      </label><br>
+        Description:<br />
+        <textarea name="descr" formControlName="description"></textarea></label
+      ><br />
     </div>
-    <button class="btn-round-red" type="submit">Submit</button>
-  </form><br>
+    <div class="btn-group center">
+      <app-back-button
+        [backUrl]="backUrl"
+        [buttonText]="buttonText"
+      ></app-back-button>
+      <button class="btn-round-purple" type="submit">Submit</button>
+    </div>
+  </form>
+  <br />
+</div>

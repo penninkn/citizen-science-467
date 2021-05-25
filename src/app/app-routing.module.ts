@@ -48,7 +48,7 @@ const routes: Routes = [
         canActivate: [AdminGuard],
       },
       { path: 'add-project', component: AddProjectComponent },
-      { path: 'add-observation', component: MakeObservationComponent },
+      { path: 'make-observation/:id', component: MakeObservationComponent },
       { path: 'update-observation/:id', component: UpdateObservationComponent },
     ],
   },

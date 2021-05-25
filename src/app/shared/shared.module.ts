@@ -7,6 +7,7 @@ import { ProjectDescriptionComponent } from './project-description/project-descr
 import { ProjectObservationsComponent } from './project-observations/project-observations.component';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
+import { BackButtonComponent } from './back-button/back.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,14 @@ import { NavigationComponent } from './navigation/navigation.component';
     ProjectObservationsComponent,
     DownloadObservationsComponent,
     NavigationComponent,
+    BackButtonComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
     ProjectsComponent,
     DownloadObservationsComponent,
     NavigationComponent,
+    BackButtonComponent,
   ],
 })
 export class SharedModule {}
