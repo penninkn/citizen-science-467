@@ -21,6 +21,8 @@ export class NavigationComponent implements OnInit {
       sessionStorage.removeItem('isLoggedIn');
       window.alert('Successfully logged out!');
       this.router.navigateByUrl('/login');
+    } else {
+      window.alert('Please login to continue...');
     }
   }
 }
