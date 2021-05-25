@@ -1,25 +1,29 @@
 <div id="message">
-  <h3>{{message}}</h3>
+  <h3>{{ message }}</h3>
 </div>
 <div class="login_form">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>
       <label>
         Username:<br />
-        <input type="text" formControlName="username">
+        <input type="text" formControlName="username" />
       </label>
     </div>
     <div>
       <label>
         Password:<br />
-        <input type="password" formControlName="password"> </label><br />
+        <input type="password" formControlName="password" /> </label
+      ><br />
     </div>
     <button type="submit" class="btn-round-blue" [disabled]="!loginForm.valid">
       Submit
     </button>
   </form>
-  <div> <br><br><br>
-    <a routerLink="/registration"><button class="btn-round-red">No Account? Sign Up!</button></a>
+  <div>
+    <br /><br /><br />
+    <a routerLink="/registration"
+      ><button class="btn-round-red">No Account? Sign Up!</button></a
+    >
   </div>
-  <br>
+  <br />
 </div>
