@@ -2,30 +2,32 @@ $blue1: #0198E9;
 $red1: #d40d38;
 
 
-table {
-    border:2px solid $blue1;
-    border-radius: 8px;
-    width:90%;
-    margin:auto;
-    
-}
 
-th {
+.title {
     background-color:$blue1;
     color: white;
+    border:2px solid $blue1;
+    border-radius: 8px;
+    padding:3px;
+    text-align: center;
+    font-size:16px;
+    width:100%
 }
 
-td {
-    background-color: transparent;
-    color:black;
-    padding:10px;
+.btns {
+    padding-bottom:100px;
 }
 
 div {
-    padding:20px;
+    margin:auto;
+    width:90%;
 }
 
-h2 {
-    color:$red1;
-    text-align:center;
+
+#edit {
+    float:left;
+}
+
+#del {
+    float:right;
 }

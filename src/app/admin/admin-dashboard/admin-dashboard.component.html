@@ -1,9 +1,18 @@
-<div class="main_content">
-  <h2>Welcome Back, {{ user?.first_name }}</h2>
-  <a routerLink="/add-project"
-    ><button class="btn-round-red">Add Project</button></a
-  ><br /><br />
-  <a routerLink="/projects"
-    ><button class="btn-round-blue">View All Projects</button></a
-  >
-</div>
+<h2>Welcome Back, {{ user?.first_name }}</h2>
+<table>
+  <tr>
+    <td>
+      <a routerLink="/projects"><button class="btn-round-orange" id="admin-btn">
+          <img src="assets/imgs/clipboard-list-solid.svg" /><br />
+          view all projects
+        </button></a>
+    </td>
+    <td>
+      <a routerLink="/add-project"><button class="btn-round-green" id="admin-btn">
+          <img src="assets/imgs/edit-solid.svg" /><br />
+          add project
+        </button></a>
+    </td>
+  </tr>
+</table>
+<!--download observations option on this page??-->

@@ -1,20 +1,46 @@
 $blue1: #0198E9;
 $red1: #d40d38;
 
-
-
-h2 {
-    color:$red1;
-    text-align:center;
-}
-
 button {
     margin:0 auto;
     display:block;
 }
 
 a {
-    color:white;
     text-decoration:none;
-    cursor: pointer;
+}
+
+img {
+    height:65%;
+    margin:auto;
+}
+
+#admin-btn {
+    width:160px;
+    height:160px;
+    font-size:16px;
+}
+
+table {
+    width:60%;
+    margin:auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+td {
+    padding:10px;
+
+}
+
+@media only screen and (max-width: 600px) {
+    table {
+        width:90%;
+    }
+    #admin-btn {
+        width:120px;
+        height:120px;
+        font-size:14px;
+    }
+    
 }

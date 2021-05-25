@@ -1,29 +1,30 @@
-$blue1: #0198e9;
+$blue1: #0198E9;
 $red1: #d40d38;
 
-table {
-  border: 2px solid $blue1;
-  border-radius: 8px;
-  width: 90%;
-  margin: auto;
-}
 
-th {
-  background-color: $blue1;
-  color: white;
-}
 
-td {
-  background-color: transparent;
-  color: black;
-  padding: 10px;
+.title {
+    background-color:$blue1;
+    color: white;
+    border:2px solid $blue1;
+    border-radius: 8px;
+    padding:3px;
+    text-align: center;
+    font-size:16px;
+    width:100%
 }
 
 div {
-  padding: 20px;
+    margin:auto;
+    width:90%;
 }
 
 h2 {
-  color: $red1;
-  text-align: center;
+    color:$red1;
+    text-align:center;
+}
+
+button {
+  margin:0 auto;
+  display:block;
 }

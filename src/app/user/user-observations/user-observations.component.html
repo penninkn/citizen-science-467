@@ -1,25 +1,14 @@
-<div>
-    <h2>My Logs:</h2>
-    <table class='obs_display_user'>
-        <tr><th>
-            TITLE
-        </th>
-    <th>
-        TEXT
-    </th>
-    <th>
-    DATE
-    </th>
-    <th colspan='2'></th>
-    </tr>
-    <!-- <tr *ngFor="let obs of observations"> -->
+<h2>My Logs:</h2>
+<div class='obs_display_user'>
 
-    <tr *ngFor="let obs of sampleObservations">
-    <td>{{obs.title}}</td>
-    <td>{{obs.text}}</td>
-    <td>{{obs.date}}</td>
-    <td><button class='btn-round-blue'>Edit</button></td>
-    <td><button class='btn-round-red'>Delete</button></td>
-    </tr>
-    </table>
+    <div *ngFor="let obs of sampleObservations">
+        <div class="title">
+            {{obs.title}}
+        </div>
+        <!---add project name?-->
+        <p>{{obs.text}}</p>
+        <div class="btns"><button id="edit" class='btn-round-green'>Edit</button>
+            <button id="del" class='btn-round-red'>Delete</button>
+        </div>
     </div>
+</div>
