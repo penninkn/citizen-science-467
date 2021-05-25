@@ -1,5 +1,3 @@
-import { SharedModule } from './../../shared/shared.module';
-import { DownloadObservationsComponent } from '../../shared/download-observations/download-observations.component';
 import { environment } from './../../../environments/environment';
 import { UserService } from './../../services/user.service';
 import { HttpClient } from '@angular/common/http';
