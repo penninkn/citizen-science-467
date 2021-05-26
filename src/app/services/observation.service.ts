@@ -48,4 +48,10 @@ export class ObservationService {
       .get(environment.backendUrl + 'observation/user/' + projectId)
       .toPromise();
   }
+
+  deleteObservation(observationID: string): Promise<any> {
+    return this.http
+      .delete(environment.backendUrl + 'observation/' + observationID)
+      .toPromise();
+  }
 }

@@ -29,10 +29,20 @@ export class ProjectObservationsComponent implements OnInit {
           this.projectId,
           username
         );
+      console.log(this.observations[0]);
     }
   }
 
   onEditClick(observationId) {
     this.router.navigateByUrl('update-observation/' + observationId);
+  }
+
+  async onDeleteClick(observationId) {
+    try {
+      await this.observationService.deleteObservation(observationId);
+      this.ngOnInit();
+    } catch (err) {
+      window.alert('Unable to delete observation.');
+    }
   }
 }

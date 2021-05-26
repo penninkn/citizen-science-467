@@ -23,6 +23,9 @@ export class UpdateObservationComponent implements OnInit {
   public observation;
   public observationID;
 
+  buttonText = 'Return to Project';
+  backUrl = null;
+
   constructor(
     private usersService: UserService,
     private datepipe: DatePipe,
@@ -57,6 +60,7 @@ export class UpdateObservationComponent implements OnInit {
     this.date = this.datepipe.transform(this.observation.date, 'yyyy-MM-dd');
     this.longitude = this.observation.longitude;
     this.latitude = this.observation.latitude;
+    this.backUrl = 'projects/' + this.observation.project;
   }
 
   getLocation() {
@@ -86,7 +90,7 @@ export class UpdateObservationComponent implements OnInit {
         )
         .toPromise();
       window.alert('Observation updated!');
-      this.router.navigateByUrl('projects/' + this.observation.project);
+      this.router.navigateByUrl(this.backUrl);
     } catch (err) {
       window.alert(err.message);
     }

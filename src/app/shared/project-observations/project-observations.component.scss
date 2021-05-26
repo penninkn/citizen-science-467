@@ -1,30 +1,46 @@
-$blue1: #0198E9;
+$blue1: #0198e9;
 $red1: #d40d38;
 
-
-
 .title {
-    background-color:$blue1;
-    color: white;
-    border:2px solid $blue1;
-    border-radius: 8px;
-    padding:3px;
-    text-align: center;
-    font-size:16px;
-    width:100%
+  background-color: $blue1;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.obs-container {
+  border: 2px solid $blue1;
+  width: 100%;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.obs-details {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 20px;
 }
 
 div {
-    margin:auto;
-    width:90%;
+  margin: auto;
+  width: 90%;
 }
 
 h2 {
-    color:$red1;
-    text-align:center;
+  color: $red1;
+  text-align: center;
+}
+
+h3 {
+  color: white;
+  text-align: center;
 }
 
 button {
-  margin:0 auto;
-  display:block;
+  margin: 5px;
+  display: block;
+  width: 100%;
 }

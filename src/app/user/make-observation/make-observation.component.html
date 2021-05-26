@@ -36,11 +36,6 @@
         <input type="date" formControlName="date" /> </label
       ><br />
     </div>
-
-    <button type="button" class="btn-round-green" (click)="getLocation()">
-      Get Location
-    </button>
-
     <div>
       <label>
         Longitude:<br />
@@ -60,8 +55,16 @@
         /> </label
       ><br />
     </div>
-
-    <button class="btn-round-red" type="submit">Submit</button><br />
+    <div class="btn-group">
+      <app-back-button
+        [backUrl]="backUrl"
+        [buttonText]="buttonText"
+      ></app-back-button>
+      <button type="button" class="btn-round-purple" (click)="getLocation()">
+        Get Location
+      </button>
+      <button class="btn-round-blue" type="submit">Submit</button><br />
+    </div>
   </form>
   <br />
 </div>
