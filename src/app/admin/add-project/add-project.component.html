@@ -1,16 +1,16 @@
 <h1>Add a New Project</h1>
 <div class="add_form">
-  <form [formGroup]="projForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="projForm" ngNativeValidate (ngSubmit)="onSubmit()">
     <div>
       <label>
         Project Title:<br />
-        <input type="text" formControlName="title" />
+        <input type="text" formControlName="title" ngModel required/>
       </label>
     </div>
     <div>
       <label for="type">Project type:</label>
 
-      <select name="type" formControlName="type">
+      <select name="type" formControlName="type" ngModel required>
         <option value="wildlife">Wildlife</option>
         <option value="water">Oceans and Streams</option>
         <option value="weather">Weather</option>
@@ -20,7 +20,7 @@
     <div>
       <label>
         Description:<br />
-        <textarea name="descr" formControlName="description"></textarea></label
+        <textarea name="descr" formControlName="description" ngModel required></textarea></label
       ><br />
     </div>
     <div class="btn-group center">

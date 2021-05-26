@@ -1,18 +1,18 @@
 <h2>Add a New Observation</h2>
 
 <div class="obs_form">
-  <form [formGroup]="obsForm" (ngSubmit)="onSubmit()">
+  <form  [formGroup]="obsForm" ngNativeValidate (ngSubmit)="onSubmit()">
     <div>
       <label>
         Title:<br />
-        <input type="text" formControlName="title" />
+        <input name="title" type="text" formControlName="title" ngModel required/>
       </label>
     </div>
 
     <div>
       <label>
         Observation:<br />
-        <textarea name="obs" formControlName="observation"></textarea></label
+        <textarea name="obs" formControlName="observation" ngModel required></textarea></label
       ><br />
     </div>
 
@@ -48,6 +48,7 @@
           [(ngModel)]="longitude"
           value="{{ longitude }}"
           type="number"
+          step="any"
           formControlName="longitude"
         /> </label
       ><br />
@@ -56,6 +57,7 @@
         <input
           [(ngModel)]="latitude"
           type="number"
+          step="any"
           formControlName="latitude"
         /> </label
       ><br />
