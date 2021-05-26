@@ -1,4 +1,13 @@
 <h2>All Observations for: {{ project?.title }}</h2>
+<div class="btn-group center">
+  <app-back-button
+    [backUrl]="backUrl"
+    [buttonText]="buttonText"
+  ></app-back-button>
+  <button class="btn-round-orange" (click)="onClick()">
+    {{ observationText }}
+  </button>
+</div>
 
 <app-project-observations
   [projectId]="projectId"

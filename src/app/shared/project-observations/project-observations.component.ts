@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ObservationService } from 'src/app/services/observation.service';
 
 @Component({
@@ -11,7 +12,10 @@ export class ProjectObservationsComponent implements OnInit {
   @Input() getByUser;
   observations;
 
-  constructor(private observationService: ObservationService) {}
+  constructor(
+    private observationService: ObservationService,
+    private router: Router
+  ) {}
 
   async ngOnInit(): Promise<void> {
     if (!this.getByUser) {
@@ -26,5 +30,9 @@ export class ProjectObservationsComponent implements OnInit {
           username
         );
     }
+  }
+
+  onEditClick(observationId) {
+    this.router.navigateByUrl('update-observation/' + observationId);
   }
 }

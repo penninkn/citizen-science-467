@@ -4,7 +4,6 @@ import { UserObservationsComponent } from './user/user-observations/user-observa
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './account/login/login.component';
-import { LogoutComponent } from './account/logout/logout.component';
 import { ProjectsComponent } from './shared/projects/projects.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
@@ -27,7 +26,6 @@ const routes: Routes = [
     path: '',
     canActivateChild: [AuthGuard],
     children: [
-      { path: 'logout', component: LogoutComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'projects/:id', component: ProjectDescriptionComponent },
       { path: 'profile', component: ProfileComponent },
@@ -48,7 +46,7 @@ const routes: Routes = [
         canActivate: [AdminGuard],
       },
       { path: 'add-project', component: AddProjectComponent },
-      { path: 'add-observation', component: MakeObservationComponent },
+      { path: 'make-observation/:id', component: MakeObservationComponent },
       { path: 'update-observation/:id', component: UpdateObservationComponent },
     ],
   },

@@ -13,6 +13,12 @@ import { RouterModule } from '@angular/router';
     AddProjectComponent,
     ProjectDataComponent,
   ],
-  imports: [CommonModule, SharedModule, ReactiveFormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    ReactiveFormsModule,
+    RouterModule,
+    SharedModule,
+  ],
 })
 export class AdminModule {}

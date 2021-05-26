@@ -1,4 +1,3 @@
-import { DownloadObservationsComponent } from './download-observations/download-observations.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects/projects.component';
@@ -7,6 +6,7 @@ import { ProjectDescriptionComponent } from './project-description/project-descr
 import { ProjectObservationsComponent } from './project-observations/project-observations.component';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
+import { BackButtonComponent } from './back-button/back.component';
 
 @NgModule({
   declarations: [
@@ -14,14 +14,10 @@ import { NavigationComponent } from './navigation/navigation.component';
     ObservationComponent,
     ProjectDescriptionComponent,
     ProjectObservationsComponent,
-    DownloadObservationsComponent,
     NavigationComponent,
+    BackButtonComponent,
   ],
   imports: [CommonModule, RouterModule],
-  exports: [
-    ProjectsComponent,
-    DownloadObservationsComponent,
-    NavigationComponent,
-  ],
+  exports: [ProjectsComponent, NavigationComponent, BackButtonComponent],
 })
 export class SharedModule {}

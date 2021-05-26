@@ -10,6 +10,8 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./add-project.component.scss'],
 })
 export class AddProjectComponent implements OnInit {
+  backUrl: string = '/admin-dashboard';
+  buttonText: string = 'Back to Dashboard';
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,

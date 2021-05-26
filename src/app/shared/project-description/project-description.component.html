@@ -1,7 +1,24 @@
 <h2>{{ project?.title }}</h2>
 <div>
   <p>{{ project?.description }}</p>
-  <button class="btn-round-purple">Add an Observation</button>
+  <div class="center">
+    <app-back-button
+      [backUrl]="backUrl"
+      [buttonText]="buttonText"
+    ></app-back-button>
+    <button
+      class="btn-round-purple"
+      (click)="onMakeObservationClick(project._id)"
+    >
+      Make An Observation
+    </button>
+    <button
+      class="btn-round-orange"
+      (click)="onViewObservationsClick(project._id)"
+    >
+      View All Observations
+    </button>
+  </div>
 </div>
 
 <h3>My Past Observations for {{ project?.title }}</h3>
