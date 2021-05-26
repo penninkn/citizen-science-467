@@ -16,6 +16,8 @@ export class MakeObservationComponent implements OnInit {
   public longitude;
   user: any;
   projectId: string;
+  buttonText = 'Return to Project';
+  backUrl = null;
 
   constructor(
     private usersService: UserService,
@@ -40,6 +42,7 @@ export class MakeObservationComponent implements OnInit {
   async ngOnInit() {
     this.user = await this.usersService.getUserInfo();
     this.projectId = this.route.snapshot.paramMap.get('id');
+    this.backUrl = 'projects/' + this.projectId;
   }
 
   getLocation() {
