@@ -2,27 +2,17 @@
 <div>
   <p class="description">{{ project?.description }}</p>
   <div class="center">
-    <app-back-button
-      [backUrl]="backUrl"
-      [buttonText]="buttonText"
-    ></app-back-button>
-    <button
-      class="btn-round-purple"
-      (click)="onMakeObservationClick(project._id)"
-    >
+    <app-back-button [backUrl]="backUrl" [buttonText]="buttonText"></app-back-button>
+    <button class="btn-round-purple" (click)="onMakeObservationClick(project._id)">
       Make An Observation
     </button>
-    <button
-      class="btn-round-orange"
-      (click)="onViewObservationsClick(project._id)"
-    >
+    <button class="btn-round-orange" (click)="onViewObservationsClick(project._id)">
       View All Observations
     </button>
   </div>
 </div>
 
-<h3>My Past Observations for {{ project?.title }}</h3>
-<app-project-observations
-  [projectId]="projectId"
-  [getByUser]="true"
-></app-project-observations>
+<div>
+  <h3>My Past Observations for {{ project?.title }}</h3>
+</div>
+<app-project-observations [projectId]="projectId" [getByUser]="true"></app-project-observations>

@@ -12,54 +12,49 @@
     <div>
       <label>
         Observation:<br />
-        <textarea name="obs" formControlName="observation"></textarea></label
-      ><br />
+        <textarea name="obs" formControlName="observation"></textarea></label><br />
     </div>
 
     <div>
       <label>
         City:<br />
-        <input type="text" formControlName="city" /> </label
-      ><br />
+        <input type="text" formControlName="city" /> </label><br />
     </div>
 
     <div>
       <label>
         State:<br />
-        <input type="text" formControlName="state" /> </label
-      ><br />
+        <input type="text" formControlName="state" /> </label><br />
     </div>
 
     <div>
       <label>
         Date:<br />
-        <input type="date" formControlName="date" /> </label
-      ><br />
+        <input type="date" formControlName="date" /> </label><br />
     </div>
-    <div>
-      <label>
-        Longitude:<br />
-        <input
-          [(ngModel)]="longitude"
-          value="{{ longitude }}"
-          type="number"
-          formControlName="longitude"
-        /> </label
-      ><br />
-      <label>
-        Latitude:<br />
-        <input
-          [(ngModel)]="latitude"
-          type="number"
-          formControlName="latitude"
-        /> </label
-      ><br />
-    </div>
+    <table>
+      <tr>
+        <td>
+          <label>
+            Longitude:<br />
+            <input [(ngModel)]="longitude" value="{{ longitude }}" type="number" formControlName="longitude" />
+          </label><br />
+        </td>
+        <td>
+          <label>
+            Latitude:<br />
+            <input [(ngModel)]="latitude" type="number" formControlName="latitude" /> </label><br />
+        </td>
+        <td>
+          <button type="button" class="btn-round-purple" id="location-btn" (click)="getLocation()">
+            <img src="assets/imgs/map-marked-alt-solid.svg">
+          </button>
+        </td>
+      </tr>
+
+    </table>
     <div class="btn-group">
-      <app-back-button
-        [backUrl]="backUrl"
-        [buttonText]="buttonText"
-      ></app-back-button>
+      <app-back-button [backUrl]="backUrl" [buttonText]="buttonText"></app-back-button>
       <button type="button" class="btn-round-purple" (click)="getLocation()">
         Get Location
       </button>

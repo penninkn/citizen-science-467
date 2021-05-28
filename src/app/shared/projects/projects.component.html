@@ -1,16 +1,25 @@
 <h2>All Projects</h2>
-<div>
+<div class="list_all">
   <div *ngFor="let project of sampleProjects">
-    <div class="title">{{ project?.title }}</div>
-    <p>type: {{ project?.type }}</p>
-
-    <div id="btns"><button id="view" [routerLink]="['/projects', project._id]" class="btn-round-purple">
-        View
-      </button>
-      <button id="proj_obs" [routerLink]="['/projects/observations', project._id]" class="btn-round-green">
-        Observations
-      </button>
-      <br><br><br><br>
+    <div class="proj-container">
+      <div class="title">
+        <h3>{{ project?.title }}</h3>
+      </div>
+      <div class="proj-details">
+        <div class="proj-info">
+          <p><b>Type:</b> {{ project?.type }}</p>
+          <p><b>Description:</b> {{ project?.description | summary:100}}</p>
+        </div>
+        <div class="proj-actions">
+          <button class="btn-round-green" id="proj_btn" [routerLink]="['/projects', project._id]">
+            <img src="assets/imgs/question-circle-regular.svg">
+          </button>
+          <button class="btn-round-orange" id="proj_btn" [routerLink]="['/projects/observations', project._id]">
+            <img src="assets/imgs/binoculars-solid.svg">
+          </button>
+        </div>
+      </div>
     </div>
+    <br><br>
   </div>
 </div>
