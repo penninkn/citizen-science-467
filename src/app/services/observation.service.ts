@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ObservationService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getObservation(observationID: any): any {
     throw new Error('Method not implemented.');
@@ -43,9 +43,27 @@ export class ObservationService {
       .toPromise();
   }
 
+  getObservationsByUser(
+    username: string
+  ): Promise<any> {
+    const request = {
+      user: username
+    };
+    return this.http
+      .post(environment.backendUrl + 'observation/user', request)
+      .toPromise();
+  }
+
+  //is this being used anywhere? Don't see it in backend -EA
   getUserObservations(projectId: string): Promise<any> {
     return this.http
       .get(environment.backendUrl + 'observation/user/' + projectId)
+      .toPromise();
+  }
+
+  deleteObservation(observationID: string): Promise<any> {
+    return this.http
+      .delete(environment.backendUrl + 'observation/' + observationID)
       .toPromise();
   }
 }

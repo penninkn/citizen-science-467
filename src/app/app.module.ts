@@ -10,6 +10,8 @@ import { UserModule } from './user/user.module';
 import { AccountModule } from './account/account.module';
 import { AdminModule } from './admin/admin.module';
 
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -25,4 +27,4 @@ import { AdminModule } from './admin/admin.module';
   providers: [DatePipe],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

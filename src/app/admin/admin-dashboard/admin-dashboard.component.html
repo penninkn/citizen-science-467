@@ -2,28 +2,20 @@
 <table>
   <tr>
     <td>
-      <a routerLink="/projects"
-        ><button class="btn-round-orange" id="admin-btn">
+      <a routerLink="/projects"><button class="btn-round-orange" id="admin-btn">
           <img src="assets/imgs/clipboard-list-solid.svg" /><br />
           view all projects
-        </button></a
-      >
+        </button></a>
     </td>
     <td>
-      <a routerLink="/add-project"
-        ><button class="btn-round-green" id="admin-btn">
-          <img src="assets/imgs/edit-solid.svg" /><br />
+      <a routerLink="/add-project"><button class="btn-round-green" id="admin-btn">
+          <img src="assets/imgs/plus-square-regular.svg" /><br />
           add project
-        </button></a
-      >
+        </button></a>
     </td>
     <td>
-      <button
-        class="btn-round-blue"
-        id="admin-btn"
-        (click)="downloadObservations()"
-      >
-        <img src="assets/imgs/edit-solid.svg" /><br />
+      <button class="btn-round-blue" id="admin-btn" (click)="downloadObservations()">
+        <img src="assets/imgs/clipboard-list-solid.svg" /><br />
         Download Observations
       </button>
     </td>
