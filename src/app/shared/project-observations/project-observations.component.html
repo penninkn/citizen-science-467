@@ -15,22 +15,15 @@
           </p>
         </div>
         <div class="obs-actions">
-          <button
-            *ngIf="getByUser"
-            class="btn-round-green"
-            (click)="onEditClick(observation._id)"
-          >
-            Edit
+          <button *ngIf="getByUser" class="btn-round-green" id="obs_btn" (click)="onEditClick(observation._id)">
+            <img src="assets/imgs/edit-solid.svg">
           </button>
-          <button
-            *ngIf="getByUser"
-            class="btn-round-red"
-            (click)="onDeleteClick(observation._id)"
-          >
-            Delete
+          <button *ngIf="getByUser" class="btn-round-red" id="obs_btn" (click)="onDeleteClick(observation._id)">
+            <img src="assets/imgs/trash-alt-solid.svg">
           </button>
         </div>
       </div>
     </div>
+    <br><br>
   </div>
 </div>

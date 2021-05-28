@@ -5,9 +5,9 @@ $red1: #d40d38;
   background-color: $blue1;
   color: white;
   text-align: center;
-  font-size: 16px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  font-size: 14px;
+  padding-top: 1px;
+  padding-bottom: 1px;
   width: 100%;
 }
 
@@ -15,7 +15,8 @@ $red1: #d40d38;
   border: 2px solid $blue1;
   width: 100%;
   border-radius: 8px;
-  margin: 20px;
+  margin: auto;
+  padding-bottom:10px;
 }
 
 .obs-details {
@@ -43,4 +44,25 @@ button {
   margin: 5px;
   display: block;
   width: 100%;
+}
+
+
+#obs_btn {
+  width:45px;
+  height:45px;
+  padding:10px;
+}
+
+img {
+  height:90%;
+  margin:auto;
+}
+
+@media only screen and (max-width: 600px) {
+  button {
+    margin:auto;
+    margin-bottom:10px;
+  }
+
+  
 }
