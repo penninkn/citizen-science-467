@@ -6,7 +6,7 @@
       </div>
       <div class="obs-details">
         <div class="obs-info">
-          <p><b>Date:</b> {{ observation?.date }}</p>
+          <p><b>Date:</b> {{ observation?.date | date: 'MM-dd-yyyy': 'UTC' }}</p>
           <p><b>Observation:</b> {{ observation?.text }}</p>
           <p>
             <b>Location:</b> {{ observation?.city
