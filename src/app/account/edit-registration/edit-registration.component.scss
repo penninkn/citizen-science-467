@@ -1,0 +1,25 @@
+$blue1: #0198E9;
+$red1: #d40d38;
+
+
+button {
+    margin:0 auto;
+    display:block;
+}
+
+textarea {
+    width:95%;
+    height:200px
+}
+
+select {
+    width:25%;
+    font-family:verdana;
+    font-size:14px;
+    padding:5px;
+}
+
+h3{
+    text-align:center;
+    color:$red1;
+}
