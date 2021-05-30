@@ -29,7 +29,6 @@ export class ProjectObservationsComponent implements OnInit {
           this.projectId,
           username
         );
-      console.log(this.observations[0]);
     }
   }
 

@@ -81,7 +81,6 @@ export class UpdateObservationComponent implements OnInit {
       longitude: this.obsForm.get('longitude').value,
       latitude: this.obsForm.get('latitude').value,
     };
-    console.log(obsData);
     try {
       const res: any = await this.http
         .put(

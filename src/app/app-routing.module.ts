@@ -16,6 +16,7 @@ import { RegistrationComponent } from './account/registration/registration.compo
 import { DashboardGuard } from './guards/dashboard.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { ProfileComponent } from './account/profile/profile.component';
+import { EditRegistrationComponent } from './account/edit-registration/edit-registration.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
     path: '',
     canActivateChild: [AuthGuard],
     children: [
+      { path: 'edit-profile/:id', component: EditRegistrationComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'projects/:id', component: ProjectDescriptionComponent },
       { path: 'profile', component: ProfileComponent },
