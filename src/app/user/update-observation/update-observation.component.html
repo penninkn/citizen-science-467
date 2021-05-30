@@ -34,9 +34,9 @@
     <div>
       <label>
         Date:<br />
-        <input ng-model-options="{timezone: 'UTC'}"
+        <input 
             [(ngModel)]="this.date" 
-            value="{{ this.date | date: 'yyyy-MM-dd':'UTC' }}" 
+            value="{{ this.date | date: 'yyyy-MM-dd':'+UTC' }}" 
             type="date"
             formControlName="date" /> </label><br />
         >
