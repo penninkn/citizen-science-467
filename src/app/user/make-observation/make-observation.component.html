@@ -38,13 +38,13 @@
         <td>
           <label>
             Longitude:<br />
-            <input [(ngModel)]="longitude" value="{{ longitude }}" type="number" formControlName="longitude" />
+            <input [(ngModel)]="longitude" value="{{ longitude }}" step="any" type="number" formControlName="longitude" />
           </label><br />
         </td>
         <td>
           <label>
             Latitude:<br />
-            <input [(ngModel)]="latitude" type="number" formControlName="latitude" /> </label><br />
+            <input [(ngModel)]="latitude" type="number" step="any" formControlName="latitude" /> </label><br />
         </td>
         <td>
           <button type="button" class="btn-round-purple" id="location-btn" (click)="getLocation()">
@@ -77,9 +77,7 @@
     </table>
     <div class="btn-group">
       <app-back-button [backUrl]="backUrl" [buttonText]="buttonText"></app-back-button>
-      <button type="button" class="btn-round-purple" (click)="getLocation()">
-        Get Location
-      </button>
+  
       <button class="btn-round-blue" type="submit">Submit</button><br />
     </div>
   </form>
