@@ -34,8 +34,12 @@
     <div>
       <label>
         Date:<br />
-        <input [(ngModel)]="this.date" value="{{ this.date | date: 'yyyy-MM-dd' }}" type="date"
-          formControlName="date" /> </label><br />
+        <input 
+            [(ngModel)]="this.date" 
+            value="{{ this.date | date: 'yyyy-MM-dd':'+UTC' }}" 
+            type="date"
+            formControlName="date" /> </label><br />
+        >
     </div>
     <table>
       <tr>

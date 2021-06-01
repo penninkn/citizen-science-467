@@ -57,7 +57,7 @@ export class UpdateObservationComponent implements OnInit {
 
     this.user = await this.usersService.getUserInfo();
 
-    this.date = this.datepipe.transform(this.observation.date, 'yyyy-MM-dd');
+    this.date = this.datepipe.transform(this.observation.date, 'yyyy-MM-dd','UTC');
     this.longitude = this.observation.longitude;
     this.latitude = this.observation.latitude;
     this.backUrl = 'projects/' + this.observation.project;

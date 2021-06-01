@@ -3,17 +3,17 @@
   <h3>{{ message }}</h3>
 </div>
 <div class="add_form">
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="userForm" ngNativeValidate (ngSubmit)="onSubmit()">
     <div>
       <label>
         First Name:<br />
-        <input type="text" formControlName="first_name" />
+        <input type="text" formControlName="first_name" ngModel required />
       </label>
     </div>
     <div>
       <label>
         Last Name:<br />
-        <input type="text" formControlName="last_name" />
+        <input type="text" formControlName="last_name" ngModel required />
       </label>
     </div>
     <div>
@@ -25,19 +25,30 @@
     <div>
       <label>
         username:<br />
-        <input type="text" formControlName="username" />
+        <input type="text" formControlName="username" ngModel required />
       </label>
     </div>
     <div>
       <label>
         email:<br />
-        <input type="text" formControlName="email" />
+        <input
+          type="email"
+          formControlName="email"
+          ngModel email
+          ngModel required
+        />
       </label>
     </div>
     <div>
       <label>
         password:<br />
-        <input type="text" formControlName="password" />
+        <input
+          type="text"
+          formControlName="password"
+          ngModel required
+          minlength="8"
+          maxLength="16"
+        />
       </label>
     </div>
     <button class="btn-round-red" type="submit">Submit</button>
