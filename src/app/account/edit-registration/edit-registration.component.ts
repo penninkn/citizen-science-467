@@ -39,12 +39,11 @@ export class EditRegistrationComponent implements OnInit {
 
   async onSubmit() {
     let formData = {
-      first_name: this.user.first_name,
+      first_name: this.userForm.get('first_name').value,
       last_name: this.userForm.get('last_name').value,
       age: this.userForm.get('age').value,
       username: this.userForm.get('username').value,
       email: this.userForm.get('email').value,
-      admin: false,
     };
 
     try {
@@ -54,7 +53,6 @@ export class EditRegistrationComponent implements OnInit {
           formData
         )
         .toPromise();
-      console.log(res);
       localStorage.setItem('username', formData.username);
       localStorage.setItem('token', res.token.accessToken);
 

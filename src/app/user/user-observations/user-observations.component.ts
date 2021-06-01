@@ -4,7 +4,6 @@ import { environment } from 'src/environments/environment';
 import { ObservationService } from 'src/app/services/observation.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-user-observations',
   templateUrl: './user-observations.component.html',
@@ -13,18 +12,17 @@ import { Router } from '@angular/router';
 export class UserObservationsComponent implements OnInit {
   observations;
 
-  constructor(private http: HttpClient,
+  constructor(
+    private http: HttpClient,
     private observationService: ObservationService,
-    private router: Router) { }
-
+    private router: Router
+  ) {}
 
   async ngOnInit(): Promise<void> {
     const username = localStorage.getItem('username');
-    this.observations =
-      await this.observationService.getObservationsByUser(
-        username
-      );
-    console.log(this.observations[0]);
+    this.observations = await this.observationService.getObservationsByUser(
+      username
+    );
   }
 
   onEditClick(observationId) {
