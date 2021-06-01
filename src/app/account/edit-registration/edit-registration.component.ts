@@ -44,17 +44,19 @@ export class EditRegistrationComponent implements OnInit {
       age: this.userForm.get('age').value,
       username: this.userForm.get('username').value,
       email: this.userForm.get('email').value,
-      password: this.user.password,
       admin: false,
     };
 
     try {
-      const res = await this.http
+      const res: any = await this.http
         .put(
           environment.backendUrl + 'auth/register/' + this.user._id,
           formData
         )
         .toPromise();
+      console.log(res);
+      localStorage.setItem('username', formData.username);
+      localStorage.setItem('token', res.token.accessToken);
 
       window.alert('Profile updated succesfully!');
       this.router.navigateByUrl('profile');

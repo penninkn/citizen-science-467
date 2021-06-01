@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
       const res: any = await this.http
         .post(environment.backendUrl + 'auth/login', formData)
         .toPromise();
-      localStorage.setItem('user', res._id);
+      localStorage.setItem('token', res.accessToken);
       localStorage.setItem('username', res.username);
       sessionStorage.setItem('isLoggedIn', 'true');
       this.router.navigateByUrl('dashboard');

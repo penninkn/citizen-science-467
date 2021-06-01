@@ -9,8 +9,7 @@ import { DatePipe } from '@angular/common';
 import { UserModule } from './user/user.module';
 import { AccountModule } from './account/account.module';
 import { AdminModule } from './admin/admin.module';
-
-
+import { JwtInterceptorProvider } from './interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +23,7 @@ import { AdminModule } from './admin/admin.module';
     AccountModule,
     AdminModule,
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, JwtInterceptorProvider],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
