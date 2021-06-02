@@ -1,0 +1,30 @@
+<h2>Observations Master List</h2>
+<div class="download-container">
+  <button class="btn-round-orange" (click)="downloadObservations()">
+    Download All
+  </button>
+</div>
+<table>
+  <tr>
+    <th>Project</th>
+    <th>User</th>
+    <th>Date</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let observation of observations">
+    <td>{{ observation?.project?.title }}</td>
+    <td>{{ observation?.user?.username }}</td>
+    <td>{{ observation?.date }}</td>
+    <td>
+      <button class="btn-round-green" (click)="onViewClick(observation._id)">
+        View
+      </button>
+      <button class="btn-round-purple" (click)="onEditClick(observation._id)">
+        Edit
+      </button>
+      <button class="btn-round-red" (click)="onDeleteClick(observation._id)">
+        Delete
+      </button>
+    </td>
+  </tr>
+</table>

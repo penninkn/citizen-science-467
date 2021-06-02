@@ -17,6 +17,8 @@ import { DashboardGuard } from './guards/dashboard.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { ProfileComponent } from './account/profile/profile.component';
 import { EditRegistrationComponent } from './account/edit-registration/edit-registration.component';
+import { ObservationListComponent } from './admin/observations-list/observations-list.component';
+import { SingleObservationComponent } from './shared/single-observation/single-observation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -50,6 +52,8 @@ const routes: Routes = [
       { path: 'add-project', component: AddProjectComponent },
       { path: 'make-observation/:id', component: MakeObservationComponent },
       { path: 'update-observation/:id', component: UpdateObservationComponent },
+      { path: 'admin-observations', component: ObservationListComponent },
+      {path: 'observation/:id', component: SingleObservationComponent}
     ],
   },
 ];

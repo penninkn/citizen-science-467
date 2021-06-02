@@ -1,30 +1,37 @@
 <h2>My Logs:</h2>
 <div class="list_all">
-    <div *ngFor="let observation of observations">
-        <div class="obs-container">
-            <div class="title">
-                <h3>{{ observation?.title }}</h3>
-            </div>
-            <div class="obs-details">
-                <div class="obs-info">
-                    <p><b>Date:</b> {{ observation?.date }}</p>
-                    <p><b>Observation:</b> {{ observation?.text }}</p>
-                    <p>
-                        <b>Location:</b> {{ observation?.city
-                        }}<span *ngIf="observation.state">, </span>
-                        {{ observation?.state }}
-                    </p>
-                </div>
-                <div class="obs-actions">
-                    <button class="btn-round-green" id="obs_btn">
-                        <img src="assets/imgs/edit-solid.svg" (click)="onEditClick(observation._id)">
-                    </button>
-                    <button class="btn-round-red" id="obs_btn">
-                        <img src="assets/imgs/trash-alt-solid.svg" (click)="onDeleteClick(observation._id)">
-                    </button>
-                </div>
-            </div>
+  <div *ngFor="let observation of observations">
+    <div class="obs-container">
+      <div class="title">
+        <h3>{{ observation?.title }}</h3>
+      </div>
+      <div class="obs-details">
+        <div class="obs-info">
+          <p><b>Project:</b> {{ observation?.project?.title }}</p>
+          <p><b>Date:</b> {{ observation?.date }}</p>
+          <p><b>Observation:</b> {{ observation?.text }}</p>
+          <p>
+            <b>Location:</b> {{ observation?.city
+            }}<span *ngIf="observation.state">, </span>
+            {{ observation?.state }}
+          </p>
         </div>
-        <br><br>
+        <div class="obs-actions">
+          <button class="btn-round-green" id="obs_btn">
+            <img
+              src="assets/imgs/edit-solid.svg"
+              (click)="onEditClick(observation._id)"
+            />
+          </button>
+          <button class="btn-round-red" id="obs_btn">
+            <img
+              src="assets/imgs/trash-alt-solid.svg"
+              (click)="onDeleteClick(observation._id)"
+            />
+          </button>
+        </div>
+      </div>
     </div>
+    <br /><br />
+  </div>
 </div>

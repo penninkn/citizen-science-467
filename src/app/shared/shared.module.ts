@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BackButtonComponent } from './back-button/back.component';
 import { SummaryPipe } from '../CustomPipe/Summary.pipe';
+import { SingleObservationComponent } from './single-observation/single-observation.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,14 @@ import { SummaryPipe } from '../CustomPipe/Summary.pipe';
     NavigationComponent,
     BackButtonComponent,
     SummaryPipe,
+    SingleObservationComponent,
   ],
   imports: [CommonModule, RouterModule],
-  exports: [ProjectsComponent, NavigationComponent, BackButtonComponent],
+  exports: [
+    ProjectsComponent,
+    NavigationComponent,
+    BackButtonComponent,
+    SingleObservationComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
