@@ -1,0 +1,30 @@
+$blue1: #0198e9;
+button {
+  margin: 5px;
+}
+
+table {
+  border: $blue1 solid 1px;
+  margin: auto;
+}
+
+td {
+  border: $blue1 solid 1px;
+  margin: 10px;
+  padding: 10px;
+}
+
+th {
+  background-color: $blue1;
+  color: white;
+}
+
+tr {
+  background-color: white;
+}
+
+.download-container {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}

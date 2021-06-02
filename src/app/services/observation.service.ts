@@ -8,10 +8,6 @@ import { environment } from 'src/environments/environment';
 export class ObservationService {
   constructor(private http: HttpClient) { }
 
-  getObservation(observationID: any): any {
-    throw new Error('Method not implemented.');
-  }
-
   getProjectObservations(projectId: string): Promise<any> {
     return this.http
       .get(environment.backendUrl + 'observation/project/' + projectId)

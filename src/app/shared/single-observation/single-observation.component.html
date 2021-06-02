@@ -1,0 +1,36 @@
+<div class="obs">
+  <div class="obs-container">
+    <div class="title">
+      <h3>Observation Detail</h3>
+    </div>
+    <div class="obs-details">
+      <div class="obs-info">
+        <p><b>Project:</b> {{ observation?.project?.title }}</p>
+        <p><b>Title:</b> {{ observation?.title }}</p>
+        <p><b>Observation:</b> {{ observation?.text }}</p>
+        <p>
+          <b>Location:</b> {{ observation?.city
+          }}<span *ngIf="observation.state">, </span>
+          {{ observation?.state }}
+        </p>
+        <p>
+          <b> Coordinates:</b> {{ observation?.longitude }},
+          {{ observation?.latitude }}
+        </p>
+        <p><b>Date:</b> {{ observation?.date | date: "MM-dd-yyyy":"UTC" }}</p>
+      </div>
+      <div class="obs-actions">
+        <h2>Actions:</h2>
+        <button class="btn-round-purple" routerLink="/admin-observations">
+          View Master List
+        </button>
+        <button class="btn-round-green" (click)="onEditClick(observation._id)">
+          Edit
+        </button>
+        <button class="btn-round-red" (click)="onDeleteClick(observation._id)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

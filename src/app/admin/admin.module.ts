@@ -6,12 +6,14 @@ import { AddProjectComponent } from './add-project/add-project.component';
 import { ProjectDataComponent } from './project-data/project-data.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ObservationListComponent } from './observations-list/observations-list.component';
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     AddProjectComponent,
     ProjectDataComponent,
+    ObservationListComponent,
   ],
   imports: [
     CommonModule,
